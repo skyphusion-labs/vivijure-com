@@ -80,9 +80,9 @@ rsvg-convert -w 1200 -h 630 scripts/og-image.svg -o public/og-image.png
   not generate `worker-configuration.d.ts`.
 - **`account_id` is never hardcoded**; it is injected from `CLOUDFLARE_ACCOUNT_ID` (env / CI
   secret).
-- **Licensing:** site CODE is MIT (`LICENSE` in this repo covers the site code); Vivijure itself is
-  AGPL-3.0. Site CONTENT (copy, design) follows the Skyphusion Labs house convention.
+- **Licensing:** the site CODE is AGPL-3.0-only (`LICENSE` in this repo), same as Vivijure itself.
+  Site CONTENT (copy, design) follows the Skyphusion Labs house convention.
 
 ## License
 
-Site code is MIT. See [LICENSE](LICENSE). Vivijure the product is AGPL-3.0-only.
+The site code is AGPL-3.0-only, same as Vivijure the product. See [LICENSE](LICENSE).
