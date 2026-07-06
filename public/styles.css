@@ -703,6 +703,21 @@ a.repo-row:hover { background: var(--surface-hover); }
 }
 
 /* Acceptable use */
+/* Ask about Vivijure widget shell */
+.ask-box {
+  background: linear-gradient(160deg, var(--surface) 0%, rgba(34, 211, 238, 0.05) 100%);
+  border: 1px solid rgba(34, 211, 238, 0.25);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+}
+.ask-note {
+  margin: 1.25rem 0 0;
+  color: var(--dim);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.ask-note a { color: var(--accent); }
+
 .use-box {
   background: linear-gradient(160deg, var(--surface) 0%, rgba(251, 191, 36, 0.06) 100%);
   border: 1px solid rgba(251, 191, 36, 0.3);

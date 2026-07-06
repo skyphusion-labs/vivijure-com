@@ -183,6 +183,7 @@
   <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="/fonts.css" />
   <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/ask-widget.css" />
 </head>
 <body>
   <div class="atmosphere" aria-hidden="true">
@@ -199,6 +200,7 @@
       <a href="#how" class="nav-link">How it works</a>
       <a href="#doors" class="nav-link">GPU doors</a>
       <a href="#ecosystem" class="nav-link">Constellation</a>
+      <a href="#ask" class="nav-link">Ask</a>
       <a href="#install" class="nav-link">Install</a>
       <a href="https://github.com/skyphusion-labs/vivijure" class="nav-link nav-link--accent" target="_blank" rel="noopener noreferrer">GitHub</a>
     </nav>
@@ -478,6 +480,26 @@
           <h3>It tells you the truth</h3>
           <p>A finish step that genuinely fails, fails the render loud with the real per-shot error. It never silently ships a raw clip as if finished. Render history shows what actually happened.</p>
         </article>
+      </div>
+    </section>
+
+    <!-- ASK ABOUT VIVIJURE (AI Search over the docs + source) -->
+    <section id="ask" class="ask" aria-labelledby="ask-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Ask about Vivijure</p>
+        <h2 id="ask-title">Ask the docs anything</h2>
+        <p class="section-intro">
+          A question box wired to Cloudflare AI Search over every public Vivijure and Skyphusion
+          Labs repo and doc. Ask how a piece works, how to install it, or where something lives;
+          it answers from the source and cites the files it used.
+        </p>
+      </div>
+      <div class="ask-box">
+        <div id="vivijure-ask"></div>
+        <p class="ask-note">
+          Answers are generated from the indexed documentation and source. Check the cited files,
+          and the <a href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">source on GitHub</a>, for the final word.
+        </p>
       </div>
     </section>
 
@@ -859,6 +881,12 @@ cp deploy.env.example deploy.env   # edit deploy.env with your keys
   </footer>
 
   <script src="/main.js" defer></script>
+  <!-- Ask about Vivijure: Cloudflare Turnstile + the AI Search widget -->
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+  <script defer src="/ask-widget.js"
+          data-endpoint="https://search.vivijure.com/ask"
+          data-target="#vivijure-ask"
+          data-sitekey="0x4AAAAAADwUZ5hhCvLDz51Q"></script>
   <!-- Cloudflare Web Analytics -->
   <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ff1972626f134192b02dbc4d0a414ad1"}'></script>
   <!-- End Cloudflare Web Analytics -->
