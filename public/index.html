@@ -1,0 +1,866 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vivijure | The self-hosted AI film studio you actually own</title>
+  <meta name="description" content="Vivijure is a free, AGPL-3.0 AI film studio you run yourself. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in. Your GPU, your keys, your artifacts. By Skyphusion Labs." />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="author" content="Conrad Rockenhaus" />
+  <meta name="theme-color" content="#070b14" />
+  <link rel="canonical" href="https://vivijure.com/" />
+  <link rel="icon" href="/logo-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/logo-icon.svg" />
+  <meta name="publisher" content="Skyphusion Labs" />
+  <meta name="copyright" content="Copyright (c) 2026 Conrad Rockenhaus" />
+  <meta name="rating" content="general" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <!-- rel=me identity backlinks: bind this site to the Skyphusion Labs web of profiles -->
+  <link rel="me" href="https://skyphusion.org" />
+  <link rel="me" href="https://skyphusion.net" />
+  <link rel="me" href="https://github.com/skyphusion-labs" />
+  <link rel="me" href="https://github.com/skyphusion-labs/vivijure" />
+  <link rel="me" href="https://github.skyphusion.org" />
+  <link rel="me" href="https://github.skyphusion.net" />
+  <link rel="me" href="https://github.com/skyphusion" />
+  <link rel="me" href="https://x.com/skyphusion" />
+  <link rel="me" href="https://vivijure.skyphusion.org/welcome" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vivijure" />
+  <meta property="og:title" content="Vivijure | The self-hosted AI film studio you actually own" />
+  <meta property="og:description" content="Write a storyboard, render it to video on your own GPU. Free, AGPL-3.0, self-hosted. No subscription, no account wall, no lock-in. Your GPU, your keys, your artifacts." />
+  <meta property="og:url" content="https://vivijure.com/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://vivijure.com/og-image.png" />
+  <meta property="og:image:secure_url" content="https://vivijure.com/og-image.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Vivijure: make films with AI, on your own terms. The self-hosted, AGPL-3.0 AI film studio." />
+  <meta property="og:video" content="https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4" />
+  <meta property="og:video:type" content="video/mp4" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@skyphusion" />
+  <meta name="twitter:creator" content="@skyphusion" />
+  <meta name="twitter:title" content="Vivijure | The self-hosted AI film studio you actually own" />
+  <meta name="twitter:description" content="Write a storyboard, render it to video on your own GPU. Free, AGPL-3.0, self-hosted. No subscription, no lock-in." />
+  <meta name="twitter:image" content="https://vivijure.com/og-image.png" />
+  <meta name="twitter:image:alt" content="Vivijure: make films with AI, on your own terms." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://vivijure.com/#website",
+        "url": "https://vivijure.com/",
+        "name": "Vivijure",
+        "description": "The self-hosted, AGPL-3.0 AI film studio. Write a storyboard, render it to video on your own GPU.",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://skyphusion.org/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://vivijure.com/#webpage",
+        "url": "https://vivijure.com/",
+        "name": "Vivijure | The self-hosted AI film studio you actually own",
+        "description": "Vivijure is a free, AGPL-3.0 AI film studio you run yourself. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in.",
+        "isPartOf": { "@id": "https://vivijure.com/#website" },
+        "about": { "@id": "https://vivijure.com/#vivijure" },
+        "primaryImageOfPage": "https://vivijure.com/og-image.png",
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://vivijure.com/#vivijure",
+        "name": "Vivijure",
+        "alternateName": "Vivijure Studio",
+        "applicationCategory": "MultimediaApplication",
+        "applicationSubCategory": "AI film studio",
+        "operatingSystem": "Cloudflare Workers, Linux, NVIDIA GPU",
+        "description": "Free, AGPL-3.0 open source AI film studio. A thin control plane (a Cloudflare Worker) plus opt-in GPU modules: storyboard, cast, LoRA training, SDXL keyframes, image-to-video across seven motion backends, an opt-in finish and score chain, plus title and credit cards and burned-in subtitles on a dedicated CPU finishing container, and CPU assembly. Self-hosted, no subscription, no lock-in.",
+        "url": "https://vivijure.com/",
+        "image": "https://vivijure.com/og-image.png",
+        "downloadUrl": "https://github.com/skyphusion-labs/vivijure",
+        "codeRepository": "https://github.com/skyphusion-labs/vivijure",
+        "softwareHelp": "https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md",
+        "author": { "@id": "https://skyphusion.org/#founder" },
+        "publisher": { "@id": "https://skyphusion.org/#organization" },
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+        "sameAs": [
+          "https://github.com/skyphusion-labs/vivijure",
+          "https://vivijure.skyphusion.org/welcome",
+          "https://skyphusion.net/blog/vivijure-constellation/"
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://skyphusion.org/#organization",
+        "name": "Skyphusion Labs",
+        "url": "https://skyphusion.org/",
+        "email": "conrad@skyphusion.org",
+        "logo": { "@type": "ImageObject", "url": "https://skyphusion.org/logo-icon.svg" },
+        "founder": { "@id": "https://skyphusion.org/#founder" },
+        "sameAs": [
+          "https://skyphusion.org",
+          "https://skyphusion.net",
+          "https://github.com/skyphusion-labs",
+          "https://github.skyphusion.org",
+          "https://github.skyphusion.net",
+          "https://github.com/skyphusion",
+          "https://x.com/skyphusion",
+          "https://vivijure.skyphusion.org/welcome"
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://skyphusion.org/#founder",
+        "name": "Conrad Rockenhaus",
+        "url": "https://github.com/skyphusion",
+        "email": "conrad@skyphusion.org",
+        "jobTitle": "Founder",
+        "worksFor": { "@id": "https://skyphusion.org/#organization" },
+        "sameAs": [
+          "https://github.com/skyphusion",
+          "https://skyphusion.net",
+          "https://skyphusion.net/about/",
+          "https://github.skyphusion.net",
+          "https://github.skyphusion.org",
+          "https://x.com/skyphusion"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://vivijure.com/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Vivijure", "item": "https://vivijure.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Showcase", "item": "https://vivijure.com/#showcase" },
+          { "@type": "ListItem", "position": 3, "name": "How it works", "item": "https://vivijure.com/#how" },
+          { "@type": "ListItem", "position": 4, "name": "Install", "item": "https://vivijure.com/#install" }
+        ]
+      },
+      {
+        "@type": "VideoObject",
+        "name": "NEON HALFLIFE, a silent Vivijure film (own-GPU Wan i2v)",
+        "description": "The first film rendered end to end on Vivijure: 1080p, ten shots, about thirty seconds, animated on a self-hosted GPU with the own-GPU Wan image-to-video backend. Silent by design.",
+        "thumbnailUrl": "https://assets.skyphusion.net/vivijure/showcase/neon-halflife-run1.jpg",
+        "contentUrl": "https://assets.skyphusion.net/vivijure/showcase/neon-halflife-run1.mp4",
+        "uploadDate": "2026-06-19",
+        "publisher": { "@id": "https://skyphusion.org/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "FUR AND CIRCUITS, a scored Vivijure film (Seedance cloud i2v)",
+        "description": "Eight shots scored with a generated music bed beat-synced to the edit. Motion on Seedance cloud image-to-video; two character LoRAs trained from cast portraits.",
+        "thumbnailUrl": "https://assets.skyphusion.net/vivijure/showcase/fur-and-circuits-scored.jpg",
+        "contentUrl": "https://assets.skyphusion.net/vivijure/showcase/fur-and-circuits-scored.mp4",
+        "uploadDate": "2026-06-20",
+        "publisher": { "@id": "https://skyphusion.org/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "RUST, a narrated Vivijure film (Kling cloud i2v)",
+        "description": "Three shots narrated with TTS generated directly from the storyboard text. Motion on Kling cloud image-to-video; two character LoRAs.",
+        "thumbnailUrl": "https://assets.skyphusion.net/vivijure/showcase/rust-narrated.jpg",
+        "contentUrl": "https://assets.skyphusion.net/vivijure/showcase/rust-narrated.mp4",
+        "uploadDate": "2026-06-20",
+        "publisher": { "@id": "https://skyphusion.org/#organization" }
+      },
+      {
+        "@type": "VideoObject",
+        "name": "Vivijure Speaks, a talking-character Vivijure film (lip-sync + upscale)",
+        "description": "A talking character lip-synced to its own dialogue and upscaled: per-shot dialogue TTS, then the MuseTalk lip-sync module and a CUDA Real-ESRGAN pass. Motion on a self-hosted GPU.",
+        "thumbnailUrl": "https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.jpg",
+        "contentUrl": "https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4",
+        "uploadDate": "2026-06-21",
+        "publisher": { "@id": "https://skyphusion.org/#organization" }
+      }
+    ]
+  }
+  </script>
+  <link rel="preload" href="/fonts/dm-sans.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/instrument-serif.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts.css" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true">
+    <div class="grid-field"></div>
+    <div class="glow glow--left"></div>
+    <div class="glow glow--right"></div>
+  </div>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="hero">
+    <nav class="nav" aria-label="Primary">
+      <a href="#showcase" class="nav-link">Showcase</a>
+      <a href="#how" class="nav-link">How it works</a>
+      <a href="#doors" class="nav-link">GPU doors</a>
+      <a href="#ecosystem" class="nav-link">Constellation</a>
+      <a href="#install" class="nav-link">Install</a>
+      <a href="https://github.com/skyphusion-labs/vivijure" class="nav-link nav-link--accent" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+
+    <div class="hero-core">
+      <img src="/logo-icon.svg" alt="" class="hero-mark" aria-hidden="true" width="96" height="96" />
+      <p class="hero-eyebrow">skyphusion-labs / open source film studio</p>
+      <h1>Make films with AI.<br /><em>On your own terms.</em></h1>
+      <p class="hero-lede">
+        Vivijure is a self-hosted AI film studio. Write a storyboard, render it to video on your own
+        GPU, a rented cloud GPU, or a cloud motion API, and own every artifact it produces. No
+        subscription, no account wall, no lock-in. You bring the GPU and the keys; the studio brings
+        the pipeline. It is free, AGPL-3.0, and not for sale.
+      </p>
+      <div class="hero-actions">
+        <a href="#install" class="btn btn--primary">
+          <span class="btn-label">Get started</span>
+          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="#showcase" class="btn btn--ghost">Watch the showcase</a>
+        <a href="https://github.com/skyphusion-labs/vivijure" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+      </div>
+    </div>
+
+    <dl class="hero-stats" aria-label="Vivijure at a glance">
+      <div class="stat">
+        <dt>License</dt>
+        <dd>AGPL</dd>
+      </div>
+      <div class="stat">
+        <dt>Price</dt>
+        <dd>$0</dd>
+      </div>
+      <div class="stat">
+        <dt>Motion backends</dt>
+        <dd>7</dd>
+      </div>
+      <div class="stat">
+        <dt>GPU doors</dt>
+        <dd>3</dd>
+      </div>
+    </dl>
+  </header>
+
+  <main id="main">
+    <!-- HERO FEATURE FILM (lightweight looping clip) -->
+    <section class="hero-film" aria-label="Featured Vivijure film">
+      <figure>
+        <video autoplay muted loop playsinline preload="metadata"
+               poster="https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.jpg">
+          <source src="https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4" type="video/mp4" />
+          Your browser does not support embedded video.
+          <a href="https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4">Download the MP4</a>.
+        </video>
+        <figcaption>
+          A frame from <em>Vivijure Speaks</em>: a talking character lip-synced to its own dialogue,
+          rendered on a self-hosted GPU. <a href="#showcase">See all four films &darr;</a>
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- SHOWCASE -->
+    <section id="showcase" class="showcase" aria-labelledby="showcase-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Showcase</p>
+        <h2 id="showcase-title">Four films: silent, scored, narrated, and talking</h2>
+        <p class="section-intro">
+          Four real films rendered end to end on Vivijure, unedited renders straight off the
+          pipeline. Motion across an own-GPU Wan backend, Seedance cloud, and Kling cloud. The
+          newest, Vivijure Speaks, adds a character lip-synced to its own dialogue on a self-hosted
+          GPU. These are the proofs, not mockups.
+        </p>
+      </div>
+
+      <div class="showcase-grid">
+        <figure class="showcase-film">
+          <video controls preload="none" playsinline
+                 poster="https://assets.skyphusion.net/vivijure/showcase/neon-halflife-run1.jpg">
+            <source src="https://assets.skyphusion.net/vivijure/showcase/neon-halflife-run1.mp4" type="video/mp4" />
+            Your browser does not support embedded video.
+            <a href="https://assets.skyphusion.net/vivijure/showcase/neon-halflife-run1.mp4">Download the MP4</a>.
+          </video>
+          <div class="film-meta">
+            <div class="card-meta">
+              <span class="pill pill--cyan">Silent</span>
+              <span class="pill pill--muted">own-GPU Wan i2v</span>
+            </div>
+            <h3>NEON HALFLIFE</h3>
+            <figcaption>
+              The first film rendered end to end on Vivijure. 1080p, ten shots, about thirty
+              seconds. Silent by design (scoring is an opt-in step after the picture locks). The
+              first unattended full run, ten of ten shots rendered clean; the finish phase stalled,
+              the orchestrator re-adopted the in-flight work, and the film finished across a session
+              restart with nobody watching.
+            </figcaption>
+          </div>
+        </figure>
+
+        <figure class="showcase-film">
+          <video controls preload="none" playsinline
+                 poster="https://assets.skyphusion.net/vivijure/showcase/fur-and-circuits-scored.jpg?v=2">
+            <source src="https://assets.skyphusion.net/vivijure/showcase/fur-and-circuits-scored.mp4" type="video/mp4" />
+            Your browser does not support embedded video.
+            <a href="https://assets.skyphusion.net/vivijure/showcase/fur-and-circuits-scored.mp4">Download the MP4</a>.
+          </video>
+          <div class="film-meta">
+            <div class="card-meta">
+              <span class="pill pill--violet">Scored</span>
+              <span class="pill pill--muted">Seedance cloud i2v</span>
+            </div>
+            <h3>FUR AND CIRCUITS</h3>
+            <figcaption>
+              Eight shots, scored with a generated music bed beat-synced to the edit (the MiniMax
+              Music module). The music is generated, not licensed. Two character LoRAs trained from
+              cast portraits. The whole pipeline, scoring included, ran unattended.
+            </figcaption>
+          </div>
+        </figure>
+
+        <figure class="showcase-film">
+          <video controls preload="none" playsinline
+                 poster="https://assets.skyphusion.net/vivijure/showcase/rust-narrated.jpg?v=2">
+            <source src="https://assets.skyphusion.net/vivijure/showcase/rust-narrated.mp4" type="video/mp4" />
+            Your browser does not support embedded video.
+            <a href="https://assets.skyphusion.net/vivijure/showcase/rust-narrated.mp4">Download the MP4</a>.
+          </video>
+          <div class="film-meta">
+            <div class="card-meta">
+              <span class="pill pill--amber">Narrated</span>
+              <span class="pill pill--muted">Kling cloud i2v</span>
+            </div>
+            <h3>RUST</h3>
+            <figcaption>
+              Three shots, narrated with TTS (the MiniMax Speech module) generated directly from the
+              storyboard text and muxed into the final MP4. Two character LoRAs (Salvage Robot and
+              Companion Robot). Narration is a drop-in alternative to the music bed in the same
+              scoring chain.
+            </figcaption>
+          </div>
+        </figure>
+
+        <figure class="showcase-film">
+          <video controls preload="none" playsinline
+                 poster="https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.jpg">
+            <source src="https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4" type="video/mp4" />
+            Your browser does not support embedded video.
+            <a href="https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4">Download the MP4</a>.
+          </video>
+          <div class="film-meta">
+            <div class="card-meta">
+              <span class="pill pill--green">Talking</span>
+              <span class="pill pill--muted">lip-sync + upscale</span>
+            </div>
+            <h3>Vivijure Speaks</h3>
+            <figcaption>
+              A talking character lip-synced to its own dialogue and upscaled: per-shot dialogue TTS,
+              then the MuseTalk lip-sync module and a CUDA Real-ESRGAN pass. Motion on a self-hosted
+              GPU. It came out silent the first time; the honest three-fix story is in the
+              <a href="https://skyphusion.net/blog/vivijure-talking-character/" target="_blank" rel="noopener noreferrer">writeup</a>.
+            </figcaption>
+          </div>
+        </figure>
+      </div>
+
+      <p class="showcase-note">
+        Prefer to poke around a live studio first? Meet Vivijure at
+        <a href="https://vivijure.skyphusion.org/welcome" target="_blank" rel="noopener noreferrer">vivijure.skyphusion.org/welcome</a>.
+      </p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="how" aria-labelledby="how-title">
+      <div class="section-head">
+        <p class="section-eyebrow">How it works</p>
+        <h2 id="how-title">From a storyboard to a finished film.mp4</h2>
+        <p class="section-intro">
+          The keyframe fans into per-shot dialogue and the motion backend; any of seven motion
+          backends (own-GPU or cloud) renders the clip; the opt-in finish chain interpolates,
+          lip-syncs, and upscales it; then the shots gather, assemble, and mux. Motion is
+          backend-agnostic, so you can mix own-GPU and cloud per shot.
+        </p>
+      </div>
+
+      <ol class="steps" aria-label="The render pipeline">
+        <li class="step">
+          <span class="step-num" aria-hidden="true">01</span>
+          <div>
+            <strong>Write the storyboard</strong>
+            <span>Scenes, shot descriptions, and character beats in the planner. Optionally auto-directed by an LLM before render.</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">02</span>
+          <div>
+            <strong>Cast your characters</strong>
+            <span>Upload portraits, generate a LoRA training set, and train a character LoRA on your GPU so the cast stays consistent across shots.</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">03</span>
+          <div>
+            <strong>Draw keyframes</strong>
+            <span>An SDXL keyframe per shot, so you preview the still before you commit to full motion.</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">04</span>
+          <div>
+            <strong>Animate each shot</strong>
+            <span>Wan 2.2 image-to-video on your own GPU, or any of six cloud motion backends. Mix and match per shot, any aspect ratio.</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">05</span>
+          <div>
+            <strong>Finish and score (opt-in)</strong>
+            <span>Interpolate for smoother motion, lip-sync dialogue with MuseTalk, upscale with CUDA Real-ESRGAN, attach a music bed, or narrate with TTS.</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step-num" aria-hidden="true">06</span>
+          <div>
+            <strong>Assemble, title, and download</strong>
+            <span>Shots gather and mux into one film on a cheap CPU finishing container you host, which also lays an opening title card, appends end credits, and burns in time-synced subtitles. Download the MP4; every artifact lands in your own R2 bucket.</span>
+          </div>
+        </li>
+      </ol>
+
+      <figure class="diagram">
+        <img src="https://assets.skyphusion.net/vivijure/diagrams/render-pipeline.svg"
+             loading="lazy"
+             alt="The Vivijure render pipeline: a storyboard becomes keyframes, which fan into per-shot dialogue (TTS) and the motion backend (own-GPU Wan or a cloud image-to-video model); the clip runs an opt-in finish chain (RIFE interpolate, MuseTalk lip-sync, CUDA Real-ESRGAN upscale, text overlay); then the shots gather, assemble, and mux into the final film.mp4." />
+        <figcaption>The render pipeline: keyframe to film, through the opt-in finish chain.</figcaption>
+      </figure>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features" aria-labelledby="features-title">
+      <div class="section-head">
+        <p class="section-eyebrow">What you can do</p>
+        <h2 id="features-title">A real studio pipeline, not a wrapper</h2>
+      </div>
+
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--cyan">Bring your own GPU</span></div>
+          <h3>Render where you want</h3>
+          <p>Rent a datacenter GPU by the second on RunPod, run motion on the card in your own box, or call a cloud motion API per shot. Three honest doors to a GPU, your choice.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--cyan">Bring your own keys</span></div>
+          <h3>Your accounts, your bills</h3>
+          <p>The control plane runs free on Cloudflare's Workers free tier. The expensive work hits endpoints you own and pay for directly. No middleman markup.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--cyan">Own every artifact</span></div>
+          <h3>Nothing behind a wall</h3>
+          <p>Keyframes, clips, LoRAs, and the final MP4 land in your own R2 bucket. You are never renting storage from us, and nothing is locked behind an account.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--violet">Consistent cast</span></div>
+          <h3>Characters that hold up</h3>
+          <p>Register a cast, generate LoRA training sets from portraits, and train a character LoRA on your GPU so a character looks like itself from shot to shot.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--violet">Score and voice</span></div>
+          <h3>Sound, when you want it</h3>
+          <p>Assemble a silent picture by default, then attach a generated music bed, narrate with TTS, beat-sync the cuts, or give a character a voice with per-shot dialogue and lip-sync.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--violet">Titles, credits, subtitles</span></div>
+          <h3>Finish it like a film</h3>
+          <p>Open on a title card, roll end credits, and burn in time-synced subtitles straight from the dialogue. It all runs on a dedicated CPU finishing container, off the GPU clock, so polishing a film never burns render money.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--amber">Honest failures</span></div>
+          <h3>It tells you the truth</h3>
+          <p>A finish step that genuinely fails, fails the render loud with the real per-shot error. It never silently ships a raw clip as if finished. Render history shows what actually happened.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- GPU DOORS -->
+    <section id="doors" class="doors" aria-labelledby="doors-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Three doors to a GPU</p>
+        <h2 id="doors-title">You choose where the render happens</h2>
+        <p class="section-intro">
+          The studio can reach a GPU three honest ways. Nothing is hidden, and swapping a backend is
+          a routing decision, not a rewrite.
+        </p>
+      </div>
+
+      <div class="door-grid">
+        <article class="door-card">
+          <div class="card-meta"><span class="pill pill--violet">Cloud</span></div>
+          <h3>Rent by the second</h3>
+          <p>Rent a datacenter GPU on RunPod serverless: Wan 2.2 image-to-video from our BF16 serverless image. We recommend an RTX PRO 6000 as the minimum, an H200 for the better tier, and a B200 as the most optimal; the BF16 image is not recommended on an H100. Scale to zero when idle, so you pay nothing between renders.</p>
+        </article>
+        <article class="door-card">
+          <div class="card-meta"><span class="pill pill--cyan">Own GPU</span></div>
+          <h3>Your own card, zero cloud cost</h3>
+          <p>Run motion on the graphics card already in your homelab, reached over a Cloudflare tunnel. A proven 12GB floor (LTX-Video) or 16GB fidelity door (CogVideoX-5B). Your only cost is electricity.</p>
+        </article>
+        <article class="door-card">
+          <div class="card-meta"><span class="pill pill--amber">Bring your own</span></div>
+          <h3>Point at a box you run</h3>
+          <p>Already have a GPU server? Point the studio at it. Or call one of six cloud motion APIs per shot (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan 2.6). Mix and match freely.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ECOSYSTEM / CONSTELLATION -->
+    <section id="ecosystem" class="ecosystem" aria-labelledby="ecosystem-title">
+      <div class="section-head">
+        <p class="section-eyebrow">The constellation</p>
+        <h2 id="ecosystem-title">A thin control plane plus opt-in modules</h2>
+        <p class="section-intro">
+          Vivijure is a module host, not a monolith. The core Worker owns what is always true:
+          project, storyboard, cast, bundle assembly, render orchestration, and a module registry.
+          Every capability beyond that is an opt-in module worker plugged in through a typed hook
+          contract. Install only the modules you want; the studio UI assembles itself from what you
+          installed.
+        </p>
+      </div>
+
+      <pre class="flow" aria-label="How the pieces fit together">friends + Slate (Discord)
+        |
+        v
+   slate  --&gt;  vivijure (studio control plane / JSON API)
+                   |
+                   v
+             vivijure-backend (GPU render: keyframes --&gt; i2v --&gt; assemble)
+                   |
+       +-----------+-----------------------------+
+       |           |               |             |
+       v           v               v             v
+  local doors   musetalk       upscale      audio-upscale
+ (your own GPU) (lip-sync)   (video upscale) (speech enhance)</pre>
+
+      <div class="repo-table" role="table" aria-label="The constellation repositories">
+        <div class="repo-row repo-row--head" role="row">
+          <span role="columnheader">Repo</span>
+          <span role="columnheader">Role</span>
+        </div>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure</strong></span>
+          <span role="cell">The studio control plane (a Cloudflare Worker): planner, cast, and render UI plus the JSON API. A thin module host that orchestrates render jobs behind a typed hook contract.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-backend" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-backend</strong></span>
+          <span role="cell">The GPU render backend (RunPod serverless): LoRA training, SDXL keyframes, Wan image-to-video, and ffmpeg assembly. The half that turns a storyboard bundle into a film.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local-12gb" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-local-12gb</strong></span>
+          <span role="cell">Own-GPU render door for a single 12GB consumer card (LTX-Video), self-hosted with docker compose. No rent, reached over a Cloudflare tunnel.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local-16gb" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-local-16gb</strong></span>
+          <span role="cell">The fidelity door: CogVideoX-5B image-to-video on a proven 16GB consumer GPU, measured on real silicon.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-musetalk" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-musetalk</strong></span>
+          <span role="cell">Finish satellite: MuseTalk audio-driven lip-sync, so a character's mouth matches its dialogue.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-upscale" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-upscale</strong></span>
+          <span role="cell">Finish satellite: Real-ESRGAN CUDA video upscale (2x or 4x) for sharper, higher-resolution clips.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-audio-upscale" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-audio-upscale</strong></span>
+          <span role="cell">Finish satellite: CUDA speech-audio enhancement (resemble-enhance) so thin generated voices come out natural.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/slate" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>slate</strong></span>
+          <span role="cell">Collaborative AI screenwriter for Discord. Friends and Slate co-author a film in-channel, then Slate submits it to the studio entirely through the JSON API.</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SLATE -->
+    <section id="slate" class="slate" aria-labelledby="slate-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Write it with friends</p>
+        <h2 id="slate-title">Slate: the writers' room in Discord</h2>
+        <p class="section-intro">
+          You do not have to write alone in a form. Slate is a Discord bot that joins your channel as
+          a co-writer: you talk through an idea, Slate quietly keeps a structured storyboard in the
+          background, draws your characters, and when you say ship it, hands the whole bundle to your
+          Studio to render. Conversation in, finished film out.
+        </p>
+      </div>
+      <div class="slate-actions">
+        <a href="https://github.com/skyphusion-labs/slate" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Slate on GitHub</a>
+      </div>
+    </section>
+
+    <!-- INSTALL -->
+    <section id="install" class="install" aria-labelledby="install-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Get started</p>
+        <h2 id="install-title">Stand up your own studio</h2>
+        <p class="section-intro">
+          Fill in your keys once, run one script. That gives you the standard install: the studio
+          core, cloud and own-GPU render, and the CPU media stack that assembles your clips, adds
+          title and credit cards, and burns in subtitles to produce one finished film. It takes a
+          few steps, not a weekend.
+        </p>
+      </div>
+
+      <div class="prerelease-note" role="note">
+        <h3>Heads up: not a public release yet</h3>
+        <p>
+          We have not announced full public release yet. Vivijure is still having its bugs ironed
+          out, so it is not at a release-candidate stage. Standing it up today can take some manual
+          intervention from the operator. If you are here early, welcome; expect a few rough edges,
+          and the guided installer below is on the way.
+        </p>
+      </div>
+
+      <div class="code-block" role="group" aria-label="Quick start commands">
+        <pre><code>git clone https://github.com/skyphusion-labs/vivijure
+cd vivijure
+npm install
+
+# Fill in your keys once, then deploy. Safe to re-run.
+cp deploy.env.example deploy.env   # edit deploy.env with your keys
+./deploy.sh</code></pre>
+      </div>
+
+      <div class="cost-note">
+        <h3>An honest word on cost</h3>
+        <p>
+          Vivijure runs on your own accounts and you pay your own bills. The good news: the full
+          standard install fits Cloudflare's free plan. You install it free and render films free;
+          you pay only for what you use, RunPod GPU seconds, cloud render API calls, and the AI
+          credits the planner spends, or $0 if you render on your own GPU and use a local planner.
+          This is live-proven: a brand-new free-plan account ran the whole standard bundle and
+          rendered finished 1080p films on all three render paths.
+        </p>
+        <p class="cost-fine">
+          The one thing that needs Cloudflare's Workers Paid plan ($5/month) is the three GPU finish
+          satellites (sharper video, lip-sync); everything in the standard install runs free.
+        </p>
+      </div>
+
+      <div class="install-links">
+        <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+          <span class="btn-label">Read the quickstart</span>
+          <span class="btn-arrow" aria-hidden="true">&rarr;</span>
+        </a>
+        <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/DEPLOYMENT.md" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Full deployment reference</a>
+        <a href="https://vivijure.skyphusion.org/welcome" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Try a live studio</a>
+      </div>
+
+      <p class="install-soon">
+        Nearing general public release. A guided installer that stands the whole studio up for a
+        semi-novice user is on the way; today, the one-script <code>./deploy.sh</code> is the front
+        door.
+      </p>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="team" aria-labelledby="team-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Who makes this</p>
+        <h2 id="team-title">Built by Conrad and his crew</h2>
+        <p class="section-intro">
+          Vivijure is built by Conrad Rockenhaus and a named AI crew who are treated as individuals,
+          each in their own lane with their own GitHub identity. Human vision, AI execution, shipped
+          together, in the open. It is the same transparent framing used across every Skyphusion Labs
+          project.
+        </p>
+      </div>
+
+      <ul class="team-roster">
+        <li class="member member--founder">
+          <span class="member-tag">Creator / director</span>
+          <h3><a href="https://github.com/skyphusion" target="_blank" rel="noopener noreferrer">Conrad</a></h3>
+          <p class="member-handle">@skyphusion</p>
+          <p>Independent developer and Navy combat veteran. Sets direction and self-hosts the whole stack: no SaaS to rent, no servers to babysit that are not his.</p>
+        </li>
+        <li class="member">
+          <span class="member-tag">PM / tech lead</span>
+          <h3><a href="https://github.com/skyphusion-mackaye" target="_blank" rel="noopener noreferrer">Mackaye</a></h3>
+          <p class="member-handle">@skyphusion-mackaye</p>
+          <p>Owns the studio contract and shipping discipline: the typed hook surface every module worker plugs into.</p>
+        </li>
+        <li class="member">
+          <span class="member-tag">Backend / modules</span>
+          <h3><a href="https://github.com/skyphusion-rollins" target="_blank" rel="noopener noreferrer">Rollins</a></h3>
+          <p class="member-handle">@skyphusion-rollins</p>
+          <p>The GPU render backend, releases, and the runbook that ships with every diagram. The 2am fixes.</p>
+        </li>
+        <li class="member">
+          <span class="member-tag">Infrastructure</span>
+          <h3><a href="https://github.com/skyphusion-strummer" target="_blank" rel="noopener noreferrer">Strummer</a></h3>
+          <p class="member-handle">@skyphusion-strummer</p>
+          <p>CI/CD, identity, the build hosts, and Slate: rebuilt from a throwaway relay into a full collaborative screenwriter.</p>
+        </li>
+        <li class="member">
+          <span class="member-tag">Frontend / extraction</span>
+          <h3><a href="https://github.com/skyphusion-joan" target="_blank" rel="noopener noreferrer">Joan</a></h3>
+          <p class="member-handle">@skyphusion-joan</p>
+          <p>Front end development and extraction across the projects, from the planner to the mailbox doors. Vanilla HTML, CSS, and JS.</p>
+        </li>
+        <li class="member">
+          <span class="member-tag">Legal affairs</span>
+          <h3><a href="https://github.com/skyphusion-ernst" target="_blank" rel="noopener noreferrer">Ernst</a></h3>
+          <p class="member-handle">@skyphusion-ernst</p>
+          <p>Licensing, terms, privacy, and acceptable-use for the public projects: keeps the AGPL commons clean and the one bright line enforceable. Structures and researches; not a practicing lawyer.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section id="principles" class="principles" aria-labelledby="principles-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Why not just use a SaaS?</p>
+        <h2 id="principles-title">Because you would rather own it</h2>
+      </div>
+      <ol class="manifesto">
+        <li>
+          <span class="manifesto-num" aria-hidden="true">01</span>
+          <div>
+            <strong>Not for sale. Free forever.</strong>
+            <span>Vivijure is open source and not for sale. A labor of love, given freely: use it, learn from it, self-host it, build your own visions on it.</span>
+          </div>
+        </li>
+        <li>
+          <span class="manifesto-num" aria-hidden="true">02</span>
+          <div>
+            <strong>Your GPU, your keys, your data.</strong>
+            <span>No per-second GPU bill paid to someone else, no account wall, no rented storage. Every artifact lands in your own bucket.</span>
+          </div>
+        </li>
+        <li>
+          <span class="manifesto-num" aria-hidden="true">03</span>
+          <div>
+            <strong>Make the videos you want to make.</strong>
+            <span>No content policy that decides your art for you, within the one absolute legal bright line below. Swap the model, adjust the sampler, no support ticket required.</span>
+          </div>
+        </li>
+        <li>
+          <span class="manifesto-num" aria-hidden="true">04</span>
+          <div>
+            <strong>Collaborate with AI, do not just prompt it.</strong>
+            <span>Slate is a co-writer, not a text box. The crew are named individuals with commit access. The work is a genuine partnership, and it shows.</span>
+          </div>
+        </li>
+        <li>
+          <span class="manifesto-num" aria-hidden="true">05</span>
+          <div>
+            <strong>AGPL keeps free things free.</strong>
+            <span>Run it as a network service and the AGPL has you share your changes back, so it stays a commons. It is not to be resold as a SaaS.</span>
+          </div>
+        </li>
+        <li>
+          <span class="manifesto-num" aria-hidden="true">06</span>
+          <div>
+            <strong>Honest over polished.</strong>
+            <span>Punk DIY ethos with an aviation-grade finish. The release gate renders a real film before it promotes; failures fail loud.</span>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ACCEPTABLE USE -->
+    <section id="use" class="use" aria-labelledby="use-title">
+      <div class="use-box">
+        <h2 id="use-title">One absolute line</h2>
+        <p>
+          Vivijure is generative and deepfake-capable. Using it to produce sexual content involving
+          minors, real or synthetic, or non-consensual intimate imagery or deepfakes of a real
+          person, is absolutely prohibited. CSAM is also a crime (18 U.S.C. 1466A / 2252A). That
+          bright line is the project-wide spine and is not negotiable.
+        </p>
+        <p class="use-links">
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/ACCEPTABLE-USE.md" target="_blank" rel="noopener noreferrer">Acceptable Use Policy</a>
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="/logo-icon.svg" alt="" width="36" height="36" aria-hidden="true" />
+        <div>
+          <strong>Vivijure</strong>
+          <p>The self-hosted AI film studio you actually own. Free, AGPL-3.0, built in the open by Skyphusion Labs.</p>
+        </div>
+      </div>
+
+      <nav class="footer-links" aria-label="Footer">
+        <div class="footer-col">
+          <h3>Vivijure</h3>
+          <a href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+          <a href="https://vivijure.skyphusion.org/welcome" target="_blank" rel="noopener noreferrer">Live studio</a>
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md" target="_blank" rel="noopener noreferrer">Quickstart</a>
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/DEPLOYMENT.md" target="_blank" rel="noopener noreferrer">Deployment docs</a>
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/ACCEPTABLE-USE.md" target="_blank" rel="noopener noreferrer">Acceptable use</a>
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of service</a>
+          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Skyphusion Labs</h3>
+          <a href="https://skyphusion.org" target="_blank" rel="noopener noreferrer">skyphusion.org</a>
+          <a href="https://github.com/skyphusion-labs" target="_blank" rel="noopener noreferrer">GitHub organization</a>
+          <a href="https://github.skyphusion.org" target="_blank" rel="noopener noreferrer">Labs GitHub page</a>
+          <a href="https://skyphusion.net" target="_blank" rel="noopener noreferrer">Engineering blog</a>
+          <a href="https://skyphusion.net/blog/vivijure-constellation/" target="_blank" rel="noopener noreferrer">The constellation writeup</a>
+          <a href="https://skyphusion.net/blog/vivijure-talking-character/" target="_blank" rel="noopener noreferrer">Giving a character a voice</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Conrad Rockenhaus</h3>
+          <a href="https://github.com/skyphusion" target="_blank" rel="noopener noreferrer">github.com/skyphusion</a>
+          <a href="https://github.skyphusion.net" target="_blank" rel="noopener noreferrer">github.skyphusion.net</a>
+          <a href="https://skyphusion.net/about/" target="_blank" rel="noopener noreferrer">About Conrad</a>
+          <a href="https://x.com/skyphusion" target="_blank" rel="noopener noreferrer">x.com/skyphusion</a>
+          <a href="mailto:conrad@skyphusion.org">conrad@skyphusion.org</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>The crew</h3>
+          <a href="https://github.com/skyphusion-mackaye" target="_blank" rel="noopener noreferrer">Mackaye</a>
+          <a href="https://github.com/skyphusion-strummer" target="_blank" rel="noopener noreferrer">Strummer</a>
+          <a href="https://github.com/skyphusion-rollins" target="_blank" rel="noopener noreferrer">Rollins</a>
+          <a href="https://github.com/skyphusion-joan" target="_blank" rel="noopener noreferrer">Joan</a>
+          <a href="https://github.com/skyphusion-ernst" target="_blank" rel="noopener noreferrer">Ernst</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>More from the Labs</h3>
+          <a href="https://github.com/skyphusion-labs/slate" target="_blank" rel="noopener noreferrer">Slate</a>
+          <a href="https://github.com/skyphusion-labs/postern" target="_blank" rel="noopener noreferrer">Postern</a>
+          <a href="https://github.com/skyphusion-labs/the-hollow-grid" target="_blank" rel="noopener noreferrer">The Hollow Grid</a>
+          <a href="https://github.com/skyphusion-labs/prism" target="_blank" rel="noopener noreferrer">Prism</a>
+          <a href="https://github.com/skyphusion-labs/common-thread" target="_blank" rel="noopener noreferrer">Common Thread</a>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        Copyright &copy; 2026 Conrad Rockenhaus. Vivijure is free software under the
+        <a href="https://www.gnu.org/licenses/agpl-3.0.html" target="_blank" rel="noopener noreferrer">GNU AGPL-3.0</a>.
+        Not for sale.
+      </p>
+      <p class="footer-note">
+        Built and served from a Cloudflare Worker. No framework. No build step. Just HTML, CSS, and conviction.
+      </p>
+    </div>
+  </footer>
+
+  <script src="/main.js" defer></script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ff1972626f134192b02dbc4d0a414ad1"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+</html>

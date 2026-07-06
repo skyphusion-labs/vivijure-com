@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://vivijure.com/</loc>
+    <lastmod>2026-07-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://vivijure.com/og-image.png</image:loc>
+      <image:title>Vivijure: make films with AI, on your own terms</image:title>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://assets.skyphusion.net/vivijure/showcase/neon-halflife-run1.jpg</video:thumbnail_loc>
+      <video:title>NEON HALFLIFE, a silent Vivijure film (own-GPU Wan i2v)</video:title>
+      <video:description>The first film rendered end to end on Vivijure: 1080p, ten shots, about thirty seconds, animated on a self-hosted GPU with the own-GPU Wan image-to-video backend. Silent by design.</video:description>
+      <video:content_loc>https://assets.skyphusion.net/vivijure/showcase/neon-halflife-run1.mp4</video:content_loc>
+      <video:publication_date>2026-06-19T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://assets.skyphusion.net/vivijure/showcase/fur-and-circuits-scored.jpg</video:thumbnail_loc>
+      <video:title>FUR AND CIRCUITS, a scored Vivijure film (Seedance cloud i2v)</video:title>
+      <video:description>Eight shots scored with a generated music bed beat-synced to the edit. Motion on Seedance cloud image-to-video; two character LoRAs trained from cast portraits.</video:description>
+      <video:content_loc>https://assets.skyphusion.net/vivijure/showcase/fur-and-circuits-scored.mp4</video:content_loc>
+      <video:publication_date>2026-06-20T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://assets.skyphusion.net/vivijure/showcase/rust-narrated.jpg</video:thumbnail_loc>
+      <video:title>RUST, a narrated Vivijure film (Kling cloud i2v)</video:title>
+      <video:description>Three shots narrated with TTS generated directly from the storyboard text. Motion on Kling cloud image-to-video; two character LoRAs.</video:description>
+      <video:content_loc>https://assets.skyphusion.net/vivijure/showcase/rust-narrated.mp4</video:content_loc>
+      <video:publication_date>2026-06-20T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.jpg</video:thumbnail_loc>
+      <video:title>Vivijure Speaks, a talking-character Vivijure film (lip-sync + upscale)</video:title>
+      <video:description>A talking character lip-synced to its own dialogue and upscaled: per-shot dialogue TTS, then the MuseTalk lip-sync module and a CUDA Real-ESRGAN pass. Motion on a self-hosted GPU.</video:description>
+      <video:content_loc>https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4</video:content_loc>
+      <video:publication_date>2026-06-21T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:live>no</video:live>
+    </video:video>
+  </url>
+</urlset>

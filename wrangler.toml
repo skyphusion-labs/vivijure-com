@@ -1,0 +1,32 @@
+# vivijure.com -- the Vivijure product site. A thin Worker that serves static
+# assets (public/). No build step, no framework -- vanilla HTML/CSS/JS by design.
+#
+# account_id is read from CLOUDFLARE_ACCOUNT_ID (env / CI secret), not hardcoded.
+
+name = "vivijure-com"
+main = "src/index.ts"
+compatibility_date = "2026-06-01"
+compatibility_flags = ["nodejs_compat"]
+
+# The static site. run_worker_first routes every request through the Worker
+# before the asset layer, so the www -> apex 301 (and /health) always fire; the
+# Worker hands normal paths to env.ASSETS.fetch. Without this, Workers Assets
+# would serve "/" directly and skip the canonical-host redirect (duplicate
+# content on www).
+assets = { directory = "./public", binding = "ASSETS", run_worker_first = true }
+
+[observability]
+enabled = true
+
+# --- Deploy / routing ---
+# Serve the apex vivijure.com from this worker via a Workers Custom Domain.
+# custom_domain provisions the proxied DNS + cert for the bare apex (a plain route
+# pattern would have no DNS to attach to). The worker itself 301-redirects the
+# www host to the apex.
+[[routes]]
+pattern = "vivijure.com"
+custom_domain = true
+
+[[routes]]
+pattern = "www.vivijure.com"
+custom_domain = true

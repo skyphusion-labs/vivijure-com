@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Vivijure">
+  <!--
+    Vivijure mark: a camera lens (film studio) fused with a play triangle
+    (motion / render). Deep-navy rounded square, cyan -> violet gradient, the
+    Skyphusion Labs family palette. Reads clean down to a 16px favicon.
+  -->
+  <defs>
+    <linearGradient id="viv" x1="14" y1="52" x2="50" y2="12" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <radialGradient id="vivbg" cx="50%" cy="35%" r="70%">
+      <stop offset="0%" stop-color="#17243d"/>
+      <stop offset="100%" stop-color="#0a0f1e"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="13" fill="url(#vivbg)"/>
+  <!-- lens ring -->
+  <circle cx="32" cy="32" r="18" fill="none" stroke="url(#viv)" stroke-width="3.5" opacity="0.85"/>
+  <!-- play triangle (render / motion) -->
+  <path d="M27 23L44 32L27 41Z" fill="url(#viv)"/>
+</svg>
