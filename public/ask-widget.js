@@ -26,6 +26,9 @@
     var root = document.querySelector(targetSel);
     if (!root) return;
     root.classList.add("vjask");
+    // Static template only. The Turnstile widget is created via the DOM API below so
+    // the sitekey attribute is never concatenated into innerHTML (which would let an
+    // attribute value be reinterpreted as HTML).
     root.innerHTML =
       '<form class="vjask-form">' +
       '  <label class="vjask-label" for="vjask-input">Ask about Vivijure</label>' +
@@ -34,7 +37,7 @@
       '           placeholder="How do I render on my own GPU?" maxlength="2000" />' +
       '    <button class="vjask-btn" type="submit">Ask</button>' +
       "  </div>" +
-      (sitekey ? '  <div class="vjask-turnstile cf-turnstile" data-sitekey="' + sitekey + '" data-size="flexible"></div>' : "") +
+      (sitekey ? '  <div class="vjask-turnstile-slot"></div>' : "") +
       '  <div class="vjask-answer" aria-live="polite"></div>' +
       '  <ul class="vjask-sources" hidden></ul>' +
       "</form>";
@@ -44,6 +47,19 @@
     var btn = root.querySelector(".vjask-btn");
     var answer = root.querySelector(".vjask-answer");
     var sources = root.querySelector(".vjask-sources");
+
+    // Build the Turnstile container through the DOM so the sitekey is set with
+    // setAttribute (a string, never parsed as markup), replacing the static slot.
+    if (sitekey) {
+      var slot = root.querySelector(".vjask-turnstile-slot");
+      if (slot) {
+        var ts = document.createElement("div");
+        ts.className = "vjask-turnstile cf-turnstile";
+        ts.setAttribute("data-sitekey", sitekey);
+        ts.setAttribute("data-size", "flexible");
+        slot.replaceWith(ts);
+      }
+    }
 
     function turnstileToken() {
       if (!sitekey || !window.turnstile) return "";
