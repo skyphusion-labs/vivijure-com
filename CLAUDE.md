@@ -62,7 +62,7 @@ the self-hosted fleet).
 - **Copy accuracy:** the site describes a real, near-release product. Keep claims honest and in sync
   with the `vivijure` repo (motion backends, GPU doors, module contract, showcase films). When the
   product changes, update the copy.
-- **Licensing:** site CODE is MIT (`LICENSE`); Vivijure the product is AGPL-3.0-only.
+- **Licensing:** the site CODE is AGPL-3.0-only (`LICENSE`), same as Vivijure the product.
 
 ## Design system
 

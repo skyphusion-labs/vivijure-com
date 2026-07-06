@@ -2,7 +2,7 @@
   "name": "vivijure-com",
   "version": "0.1.0",
   "description": "vivijure.com -- the product site for Vivijure, the self-hosted AGPL AI film studio.",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
