@@ -38,3 +38,40 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: npm run deploy
+
+      # Post-deploy edge-cache purge, so a fresh deploy is never masked by stale edge
+      # cache. Runs only AFTER a successful deploy (the worker is already LIVE), so a
+      # failure here never rolls back the deploy. Reuses the deploy token, which has been
+      # granted the zone Cache Purge (purge everything) permission. Portable across
+      # projects: the zone lives in the repo variable CLOUDFLARE_ZONE_ID (a public
+      # identifier, not a secret), so this step drops into any Worker-site repo unchanged.
+      # Self-host safe: without the token or zone var it skips (exit 0). hosts/tag/prefix
+      # purge is Enterprise-only, so purge everything is the right call. POSIX sh (BusyBox
+      # ash in node:22-alpine); no jq in the image, so we grep the JSON.
+      - name: Purge Cloudflare edge cache
+        if: github.ref == 'refs/heads/main'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ZONE_ID: ${{ vars.CLOUDFLARE_ZONE_ID }}
+        run: |
+          if [ -z "${CLOUDFLARE_API_TOKEN:-}" ] || [ -z "${CLOUDFLARE_ZONE_ID:-}" ]; then
+            echo "cache purge not configured (CLOUDFLARE_API_TOKEN / CLOUDFLARE_ZONE_ID unset), skipping"
+            exit 0
+          fi
+          command -v curl >/dev/null 2>&1 || apk add --no-cache curl
+          echo "Purging entire edge cache for zone ${CLOUDFLARE_ZONE_ID}"
+          CODE="$(curl -s -o /tmp/cf_purge_resp.json -w "%{http_code}" -X POST \
+            "https://api.cloudflare.com/client/v4/zones/${CLOUDFLARE_ZONE_ID}/purge_cache" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}')" || CODE="000"
+          CODE="${CODE:-000}"
+          BODY="$(cat /tmp/cf_purge_resp.json 2>/dev/null || true)"
+          echo "purge HTTP ${CODE}"
+          printf "%s\n" "$BODY"
+          if [ "$CODE" -ge 200 ] 2>/dev/null && [ "$CODE" -lt 300 ] 2>/dev/null && printf "%s" "$BODY" | grep -Eq "\"success\"[[:space:]]*:[[:space:]]*true"; then
+            echo "Edge cache purged for zone ${CLOUDFLARE_ZONE_ID}."
+          else
+            echo "::error::Cloudflare cache purge failed (HTTP ${CODE}). The worker is LIVE; purge the cache manually for zone ${CLOUDFLARE_ZONE_ID}."
+            exit 1
+          fi
