@@ -54,7 +54,7 @@ answer `/health`, and 301-redirect `www` to the apex.
 - **Google:** the sitemap-ping API is retired; submit `https://vivijure.com/sitemap.xml` once in
   Google Search Console (and add the verification meta tag if you want property verification). Bing
   Webmaster Tools imports from Search Console or accepts the sitemap directly.
-- **Analytics:** Cloudflare Web Analytics beacon is inlined at the end of `index.html`.
+- **Analytics:** Self-hosted Umami at `analytics.skyphusion.org` (website id in `fleet-chezmoi/system/umami/websites.json`).
 
 ## Regenerating the OG image
 
