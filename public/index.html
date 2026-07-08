@@ -203,7 +203,7 @@
       <a href="#ecosystem" class="nav-link">Constellation</a>
       <a href="#ask" class="nav-link">Ask</a>
       <a href="#install" class="nav-link">Install</a>
-      <a href="https://github.com/skyphusion-labs/vivijure" class="nav-link nav-link--accent" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://github.com/skyphusion-labs/vivijure" class="nav-link nav-link--accent" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">GitHub</a>
     </nav>
 
     <div class="hero-core">
@@ -222,7 +222,7 @@
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
         <a href="#showcase" class="btn btn--ghost">Watch the showcase</a>
-        <a href="https://github.com/skyphusion-labs/vivijure" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
+        <a href="https://github.com/skyphusion-labs/vivijure" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">Source on GitHub</a>
       </div>
     </div>
 
@@ -567,11 +567,11 @@
           <span role="columnheader">Repo</span>
           <span role="columnheader">Role</span>
         </div>
-        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">
           <span role="cell"><strong>vivijure</strong></span>
           <span role="cell">The studio control plane (a Cloudflare Worker): planner, cast, and render UI plus the JSON API. A thin module host that orchestrates render jobs behind a typed hook contract.</span>
         </a>
-        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-backend" target="_blank" rel="noopener noreferrer">
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-backend" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-backend">
           <span role="cell"><strong>vivijure-backend</strong></span>
           <span role="cell">The GPU render backend (RunPod serverless): LoRA training, SDXL keyframes, Wan image-to-video, and ffmpeg assembly. The half that turns a storyboard bundle into a film.</span>
         </a>
@@ -615,7 +615,7 @@
         </p>
       </div>
       <div class="slate-actions">
-        <a href="https://github.com/skyphusion-labs/slate" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Slate on GitHub</a>
+        <a href="https://github.com/skyphusion-labs/slate" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="slate">Slate on GitHub</a>
       </div>
     </section>
 
@@ -669,7 +669,7 @@ cp deploy.env.example deploy.env   # edit deploy.env with your keys
       </div>
 
       <div class="install-links">
-        <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-quickstart">
           <span class="btn-label">Read the quickstart</span>
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
@@ -878,6 +878,9 @@ cp deploy.env.example deploy.env   # edit deploy.env with your keys
       <p class="footer-note">
         Built and served from a Cloudflare Worker. No framework. No build step. Just HTML, CSS, and conviction.
       </p>
+      <p class="footer-analytics">
+        Cookieless analytics (self-hosted) for aggregate traffic only; no individual tracking or ad-tech.
+      </p>
     </div>
   </footer>
 
@@ -888,8 +891,7 @@ cp deploy.env.example deploy.env   # edit deploy.env with your keys
           data-endpoint="https://search.vivijure.com/ask"
           data-target="#vivijure-ask"
           data-sitekey="0x4AAAAAADwUZ5hhCvLDz51Q"></script>
-  <!-- Cloudflare Web Analytics -->
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "ff1972626f134192b02dbc4d0a414ad1"}'></script>
-  <!-- End Cloudflare Web Analytics -->
+  <!-- Umami OSS marketing analytics (self-hosted). website-id: fleet-chezmoi/system/umami/websites.json -->
+  <script defer src="https://analytics.skyphusion.org/script.js" data-website-id="fb530bab-3964-4b0e-8f62-649d0744fb7e"></script>
 </body>
 </html>
