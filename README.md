@@ -6,7 +6,7 @@ site from `public/` over Workers Assets. No build step, no framework, vanilla HT
 design.
 
 This repo is the front door that explains the product. The studio application (planner, cast,
-render) lives at [vivijure.skyphusion.org](https://vivijure.skyphusion.org/welcome), and the source
+render) lives at [vivijure.skyphusion.org](https://vivijure.skyphusion.org/), and the source
 lives at [github.com/skyphusion-labs/vivijure](https://github.com/skyphusion-labs/vivijure).
 
 ## Commands
