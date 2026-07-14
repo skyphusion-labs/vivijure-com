@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vivijure | The self-hosted AI film studio you actually own</title>
-  <meta name="description" content="Vivijure is a free, AGPL-3.0 AI film studio you run yourself. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in. Your GPU, your keys, your artifacts. By Skyphusion Labs." />
+  <meta name="description" content="Vivijure is a free, AGPL-3.0 AI film studio you run yourself. Run the control panel on Cloudflare, on your home computer, or on any cloud server: you are not locked to one host. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in. By Skyphusion Labs." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Conrad Rockenhaus" />
   <meta name="theme-color" content="#070b14" />
@@ -28,7 +28,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vivijure" />
   <meta property="og:title" content="Vivijure | The self-hosted AI film studio you actually own" />
-  <meta property="og:description" content="Write a storyboard, render it to video on your own GPU. Free, AGPL-3.0, self-hosted. No subscription, no account wall, no lock-in. Your GPU, your keys, your artifacts." />
+  <meta property="og:description" content="Run the AI film studio control panel on Cloudflare, your home PC, or any cloud server. Write a storyboard, render on your GPU. Free, AGPL-3.0, self-hosted. No subscription, no lock-in." />
   <meta property="og:url" content="https://vivijure.com/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://vivijure.com/og-image.png" />
@@ -43,7 +43,7 @@
   <meta name="twitter:site" content="@skyphusion" />
   <meta name="twitter:creator" content="@skyphusion" />
   <meta name="twitter:title" content="Vivijure | The self-hosted AI film studio you actually own" />
-  <meta name="twitter:description" content="Write a storyboard, render it to video on your own GPU. Free, AGPL-3.0, self-hosted. No subscription, no lock-in." />
+  <meta name="twitter:description" content="AI film studio control panel for Cloudflare, home PC, or any cloud server. Free, AGPL-3.0, self-hosted. No subscription, no lock-in." />
   <meta name="twitter:image" content="https://vivijure.com/og-image.png" />
   <meta name="twitter:image:alt" content="Vivijure: make films with AI, on your own terms." />
   <script type="application/ld+json">
@@ -55,7 +55,7 @@
         "@id": "https://vivijure.com/#website",
         "url": "https://vivijure.com/",
         "name": "Vivijure",
-        "description": "The self-hosted, AGPL-3.0 AI film studio. Write a storyboard, render it to video on your own GPU.",
+        "description": "The self-hosted, AGPL-3.0 AI film studio. Run the control panel on Cloudflare, your home computer, or any cloud server; write a storyboard and render it on your own GPU.",
         "inLanguage": "en-US",
         "publisher": { "@id": "https://skyphusion.org/#organization" }
       },
@@ -64,7 +64,7 @@
         "@id": "https://vivijure.com/#webpage",
         "url": "https://vivijure.com/",
         "name": "Vivijure | The self-hosted AI film studio you actually own",
-        "description": "Vivijure is a free, AGPL-3.0 AI film studio you run yourself. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in.",
+        "description": "Vivijure is a free, AGPL-3.0 AI film studio you run yourself. Run the control panel on Cloudflare Workers, on a home computer, or on any cloud server. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in.",
         "isPartOf": { "@id": "https://vivijure.com/#website" },
         "about": { "@id": "https://vivijure.com/#vivijure" },
         "primaryImageOfPage": "https://vivijure.com/og-image.png",
@@ -77,19 +77,23 @@
         "alternateName": "Vivijure Studio",
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "AI film studio",
-        "operatingSystem": "Cloudflare Workers, Linux, NVIDIA GPU",
-        "description": "Free, AGPL-3.0 open source AI film studio. A thin control plane (a Cloudflare Worker) plus opt-in GPU modules: storyboard, cast, LoRA training, SDXL keyframes, image-to-video across seven motion backends, an opt-in finish and score chain, plus title and credit cards and burned-in subtitles on a dedicated CPU finishing container, and CPU assembly. Self-hosted, no subscription, no lock-in.",
+        "operatingSystem": "Cloudflare Workers, Linux, macOS, Windows, NVIDIA GPU",
+        "description": "Free, AGPL-3.0 open source AI film studio. A thin control panel you can run on Cloudflare Workers (vivijure-cf), on a home computer, or on any cloud server (vivijure-local), both unified by vivijure-core, plus an agent MCP (vivijure-mcp) that works on either host. Opt-in GPU modules: storyboard, cast, LoRA training, SDXL keyframes, image-to-video across seven motion backends, finish and score chain, titles, credits, subtitles, and CPU assembly. Self-hosted, no subscription, no lock-in.",
         "url": "https://vivijure.com/",
         "image": "https://vivijure.com/og-image.png",
         "downloadUrl": "https://github.com/skyphusion-labs/vivijure",
         "codeRepository": "https://github.com/skyphusion-labs/vivijure",
-        "softwareHelp": "https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md",
+        "softwareHelp": "https://github.com/skyphusion-labs/vivijure/blob/main/README.md",
         "author": { "@id": "https://skyphusion.org/#founder" },
         "publisher": { "@id": "https://skyphusion.org/#organization" },
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://www.gnu.org/licenses/agpl-3.0.html",
         "sameAs": [
           "https://github.com/skyphusion-labs/vivijure",
+          "https://github.com/skyphusion-labs/vivijure-cf",
+          "https://github.com/skyphusion-labs/vivijure-local",
+          "https://github.com/skyphusion-labs/vivijure-core",
+          "https://github.com/skyphusion-labs/vivijure-mcp",
           "https://skyphusion.net/blog/vivijure-constellation/"
         ]
       },
@@ -134,8 +138,9 @@
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Vivijure", "item": "https://vivijure.com/" },
           { "@type": "ListItem", "position": 2, "name": "Showcase", "item": "https://vivijure.com/#showcase" },
-          { "@type": "ListItem", "position": 3, "name": "How it works", "item": "https://vivijure.com/#how" },
-          { "@type": "ListItem", "position": 4, "name": "Install", "item": "https://vivijure.com/#install" }
+          { "@type": "ListItem", "position": 3, "name": "Hosts", "item": "https://vivijure.com/#hosts" },
+          { "@type": "ListItem", "position": 4, "name": "How it works", "item": "https://vivijure.com/#how" },
+          { "@type": "ListItem", "position": 5, "name": "Install", "item": "https://vivijure.com/#install" }
         ]
       },
       {
@@ -196,6 +201,7 @@
     <nav class="nav" aria-label="Primary">
       <a href="#showcase" class="nav-link">Showcase</a>
       <a href="#how" class="nav-link">How it works</a>
+      <a href="#hosts" class="nav-link">Hosts</a>
       <a href="#doors" class="nav-link">GPU doors</a>
       <a href="#ecosystem" class="nav-link">Constellation</a>
       <a href="#ask" class="nav-link">Ask</a>
@@ -208,10 +214,11 @@
       <p class="hero-eyebrow">skyphusion-labs / open source film studio</p>
       <h1>Make films with AI.<br /><em>On your own terms.</em></h1>
       <p class="hero-lede">
-        Vivijure is a self-hosted AI film studio. Write a storyboard, render it to video on your own
-        GPU, a rented cloud GPU, or a cloud motion API, and own every artifact it produces. No
-        subscription, no account wall, no lock-in. You bring the GPU and the keys; the studio brings
-        the pipeline. It is free, AGPL-3.0, and not for sale.
+        Vivijure is a self-hosted AI film studio. Run the control panel on Cloudflare, on your home
+        computer, or on any cloud server; you are not restricted to one host. Write a storyboard,
+        render it to video on your own GPU, a rented cloud GPU, or a cloud motion API, and own every
+        artifact it produces. No subscription, no account wall, no lock-in. Free, AGPL-3.0, and not
+        for sale.
       </p>
       <div class="hero-actions">
         <a href="#install" class="btn btn--primary">
@@ -237,8 +244,8 @@
         <dd>7</dd>
       </div>
       <div class="stat">
-        <dt>GPU doors</dt>
-        <dd>3</dd>
+        <dt>Control hosts</dt>
+        <dd>2</dd>
       </div>
     </dl>
   </header>
@@ -364,8 +371,10 @@
       </div>
 
       <p class="showcase-note">
-        Like what you see? Make your own -- start with the
-        <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md" target="_blank" rel="noopener noreferrer">quickstart</a>.
+        Like what you see? Make your own -- pick a host with the
+        <a href="#install">install paths</a>
+        or open the
+        <a href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">constellation map</a>.
       </p>
     </section>
 
@@ -422,7 +431,7 @@
           <span class="step-num" aria-hidden="true">06</span>
           <div>
             <strong>Assemble, title, and download</strong>
-            <span>Shots gather and mux into one film on a cheap CPU finishing container you host, which also lays an opening title card, appends end credits, and burns in time-synced subtitles. Download the MP4; every artifact lands in your own R2 bucket.</span>
+            <span>Shots gather and mux into one film on a cheap CPU finishing container you host, which also lays an opening title card, appends end credits, and burns in time-synced subtitles. Download the MP4; every artifact lands in your own bucket.</span>
           </div>
         </li>
       </ol>
@@ -451,12 +460,12 @@
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--cyan">Bring your own keys</span></div>
           <h3>Your accounts, your bills</h3>
-          <p>The control plane runs free on Cloudflare's Workers free tier. The expensive work hits endpoints you own and pay for directly. No middleman markup.</p>
+          <p>Run the control panel free on Cloudflare's Workers free tier, or self-host it with Node on a home PC or any cloud VM. Either way, the expensive work hits endpoints you own and pay for directly. No middleman markup.</p>
         </article>
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--cyan">Own every artifact</span></div>
           <h3>Nothing behind a wall</h3>
-          <p>Keyframes, clips, LoRAs, and the final MP4 land in your own R2 bucket. You are never renting storage from us, and nothing is locked behind an account.</p>
+          <p>Keyframes, clips, LoRAs, and the final MP4 land in your own object store (R2 on the Cloudflare host, or S3/MinIO on the local host). You are never renting storage from us, and nothing is locked behind an account.</p>
         </article>
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--violet">Consistent cast</span></div>
@@ -501,6 +510,42 @@
       </div>
     </section>
 
+    <!-- CONTROL PANEL HOSTS -->
+    <section id="hosts" class="doors" aria-labelledby="hosts-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Two places to run the studio</p>
+        <h2 id="hosts-title">Cloudflare, or your own machine. Same studio.</h2>
+        <p class="section-intro">
+          The Vivijure control panel is not locked to Cloudflare. Run it on Workers, on a home
+          computer, or on any cloud server. Both hosts share the same orchestration library
+          (<a href="https://github.com/skyphusion-labs/vivijure-core" target="_blank" rel="noopener noreferrer">vivijure-core</a>)
+          and the same agent API
+          (<a href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer">vivijure-mcp</a>).
+        </p>
+      </div>
+
+      <div class="door-grid">
+        <article class="door-card">
+          <div class="card-meta"><span class="pill pill--violet">Cloudflare</span></div>
+          <h3>vivijure-cf</h3>
+          <p>The control panel on Cloudflare Workers: D1, R2, service-bound modules, free-tier friendly. Standard path if you want an edge deploy with almost no ops.</p>
+          <p style="margin-top:0.75rem"><a href="https://github.com/skyphusion-labs/vivijure-cf" target="_blank" rel="noopener noreferrer">github.com/skyphusion-labs/vivijure-cf</a></p>
+        </article>
+        <article class="door-card">
+          <div class="card-meta"><span class="pill pill--cyan">Self-hosted</span></div>
+          <h3>vivijure-local</h3>
+          <p>The same control panel on Node, SQLite, and S3/MinIO. Run it on a home PC, a homelab box, or any cloud VM. No Cloudflare account required.</p>
+          <p style="margin-top:0.75rem"><a href="https://github.com/skyphusion-labs/vivijure-local" target="_blank" rel="noopener noreferrer">github.com/skyphusion-labs/vivijure-local</a></p>
+        </article>
+        <article class="door-card">
+          <div class="card-meta"><span class="pill pill--amber">Shared + agents</span></div>
+          <h3>vivijure-core + vivijure-mcp</h3>
+          <p><strong>vivijure-core</strong> is the shared orchestration both hosts build on. <strong>vivijure-mcp</strong> lets Claude, Cursor, and other MCP clients drive either host through the same studio API.</p>
+          <p style="margin-top:0.75rem"><a href="https://github.com/skyphusion-labs/vivijure-core" target="_blank" rel="noopener noreferrer">vivijure-core</a> · <a href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer">vivijure-mcp</a></p>
+        </article>
+      </div>
+    </section>
+
     <!-- GPU DOORS -->
     <section id="doors" class="doors" aria-labelledby="doors-title">
       <div class="section-head">
@@ -508,7 +553,7 @@
         <h2 id="doors-title">You choose where the render happens</h2>
         <p class="section-intro">
           The studio can reach a GPU three honest ways. Nothing is hidden, and swapping a backend is
-          a routing decision, not a rewrite.
+          a routing decision, not a rewrite. These GPU doors work with either control panel host.
         </p>
       </div>
 
@@ -535,29 +580,34 @@
     <section id="ecosystem" class="ecosystem" aria-labelledby="ecosystem-title">
       <div class="section-head">
         <p class="section-eyebrow">The constellation</p>
-        <h2 id="ecosystem-title">A thin control plane plus opt-in modules</h2>
+        <h2 id="ecosystem-title">A thin control panel plus opt-in modules</h2>
         <p class="section-intro">
-          Vivijure is a module host, not a monolith. The core Worker owns what is always true:
-          project, storyboard, cast, bundle assembly, render orchestration, and a module registry.
-          Every capability beyond that is an opt-in module worker plugged in through a typed hook
-          contract. Install only the modules you want; the studio UI assembles itself from what you
-          installed.
+          Vivijure is a module host, not a monolith. Shared orchestration in
+          <a href="https://github.com/skyphusion-labs/vivijure-core" target="_blank" rel="noopener noreferrer">vivijure-core</a>
+          owns what is always true: project, storyboard, cast, bundle assembly, render orchestration,
+          and a module registry. Host it with
+          <a href="https://github.com/skyphusion-labs/vivijure-cf" target="_blank" rel="noopener noreferrer">vivijure-cf</a>
+          or
+          <a href="https://github.com/skyphusion-labs/vivijure-local" target="_blank" rel="noopener noreferrer">vivijure-local</a>.
+          Every capability beyond that is an opt-in module plugged in through a typed hook contract.
         </p>
       </div>
 
-      <pre class="flow" aria-label="How the pieces fit together">friends + Slate (Discord)
+      <pre class="flow" aria-label="How the pieces fit together">friends + Slate (Discord) or vivijure-mcp (agents)
         |
         v
-   slate  --&gt;  vivijure (studio control plane / JSON API)
-                   |
-                   v
-             vivijure-backend (GPU render: keyframes --&gt; i2v --&gt; assemble)
-                   |
-       +-----------+-----------------------------+
-       |           |               |             |
-       v           v               v             v
-  local doors   musetalk       upscale      audio-upscale
- (your own GPU) (lip-sync)   (video upscale) (speech enhance)</pre>
+   vivijure-cf  or  vivijure-local   (control panel / JSON API)
+              \          /
+               vivijure-core
+                     |
+                     v
+             vivijure-backend (GPU: keyframes --&gt; i2v --&gt; assemble)
+                     |
+       +-------------+-----------------------------+
+       |             |               |             |
+       v             v               v             v
+  local-12/16gb   musetalk       upscale      audio-upscale
+ (own-GPU doors) (lip-sync)   (video upscale) (speech enhance)</pre>
 
       <div class="repo-table" role="table" aria-label="The constellation repositories">
         <div class="repo-row repo-row--head" role="row">
@@ -566,15 +616,31 @@
         </div>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">
           <span role="cell"><strong>vivijure</strong></span>
-          <span role="cell">The studio control plane (a Cloudflare Worker): planner, cast, and render UI plus the JSON API. A thin module host that orchestrates render jobs behind a typed hook contract.</span>
+          <span role="cell">Constellation map and front door: links every studio host, GPU engine, finish satellite, Slate, and MCP. Start here for the full map.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-cf" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-cf">
+          <span role="cell"><strong>vivijure-cf</strong></span>
+          <span role="cell">Cloudflare Workers control panel: planner, cast, render UI, JSON API, D1/R2, module workers. Builds on vivijure-core.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-local">
+          <span role="cell"><strong>vivijure-local</strong></span>
+          <span role="cell">Self-hosted control panel for a home PC or any cloud server: Node, SQLite, S3/MinIO, Docker. Same studio API and UI, no Cloudflare required.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-core" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-core">
+          <span role="cell"><strong>vivijure-core</strong></span>
+          <span role="cell">Shared orchestration library both control panels consume: module registry, film pipeline, Platform ICD.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-mcp">
+          <span role="cell"><strong>vivijure-mcp</strong></span>
+          <span role="cell">MCP server so AI agents drive the studio API. Works with vivijure-cf and vivijure-local.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-backend" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-backend">
           <span role="cell"><strong>vivijure-backend</strong></span>
-          <span role="cell">The GPU render backend (RunPod serverless): LoRA training, SDXL keyframes, Wan image-to-video, and ffmpeg assembly. The half that turns a storyboard bundle into a film.</span>
+          <span role="cell">The GPU render backend (RunPod serverless): LoRA training, SDXL keyframes, Wan image-to-video, and ffmpeg assembly.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local-12gb" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-local-12gb</strong></span>
-          <span role="cell">Own-GPU render door for a single 12GB consumer card (LTX-Video), self-hosted with docker compose. No rent, reached over a Cloudflare tunnel.</span>
+          <span role="cell">Own-GPU render door for a single 12GB consumer card (LTX-Video), self-hosted with docker compose. No rent.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local-16gb" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-local-16gb</strong></span>
@@ -594,7 +660,11 @@
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/slate" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>slate</strong></span>
-          <span role="cell">Collaborative AI screenwriter for Discord. Friends and Slate co-author a film in-channel, then Slate submits it to the studio entirely through the JSON API.</span>
+          <span role="cell">Collaborative AI screenwriter for Discord. Co-author a film in-channel, then submit to vivijure-cf or vivijure-local through the JSON API.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-com" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-com</strong></span>
+          <span role="cell">This product site and showcase at vivijure.com.</span>
         </a>
       </div>
     </section>
@@ -622,10 +692,9 @@
         <p class="section-eyebrow">Get started</p>
         <h2 id="install-title">Stand up your own studio</h2>
         <p class="section-intro">
-          Fill in your keys once, run one script. That gives you the standard install: the studio
-          core, cloud and own-GPU render, and the CPU media stack that assembles your clips, adds
-          title and credit cards, and burns in subtitles to produce one finished film. It takes a
-          few steps, not a weekend.
+          Pick a control panel host, then attach the GPU engines you want. Cloudflare if you want an
+          edge deploy; vivijure-local if you want the panel on a home computer or any cloud server.
+          Same studio API either way.
         </p>
       </div>
 
@@ -634,49 +703,56 @@
         <p>
           We have not announced full public release yet. Vivijure is still having its bugs ironed
           out, so it is not at a release-candidate stage. Standing it up today can take some manual
-          intervention from the operator. If you are here early, welcome; expect a few rough edges,
-          and the guided installer below is on the way.
+          intervention from the operator. If you are here early, welcome; expect a few rough edges.
         </p>
       </div>
 
-      <div class="code-block" role="group" aria-label="Quick start commands">
-        <pre><code>git clone https://github.com/skyphusion-labs/vivijure
-cd vivijure
-npm install
-
-# Fill in your keys once, then deploy. Safe to re-run.
-cp deploy.env.example deploy.env   # edit deploy.env with your keys
+      <div class="code-block" role="group" aria-label="Cloudflare control panel quick start">
+        <pre><code># Path A: Cloudflare Workers control panel
+git clone https://github.com/skyphusion-labs/vivijure-cf
+cd vivijure-cf
+cp wrangler.toml.example wrangler.toml   # fill bindings
+cp deploy.env.example deploy.env         # fill keys
 ./deploy.sh</code></pre>
+      </div>
+
+      <div class="code-block" role="group" aria-label="Self-hosted control panel quick start" style="margin-top:1rem">
+        <pre><code># Path B: home PC or any cloud server (no Cloudflare)
+git clone https://github.com/skyphusion-labs/vivijure-local
+cd vivijure-local
+npm run install:studio
+npm run compose:up
+# open http://127.0.0.1:8790</code></pre>
       </div>
 
       <div class="cost-note">
         <h3>An honest word on cost</h3>
         <p>
-          Vivijure runs on your own accounts and you pay your own bills. The good news: the full
-          standard install fits Cloudflare's free plan. You install it free and render films free;
-          you pay only for what you use, RunPod GPU seconds, cloud render API calls, and the AI
-          credits the planner spends, or $0 if you render on your own GPU and use a local planner.
-          This is live-proven: a brand-new free-plan account ran the whole standard bundle and
-          rendered finished 1080p films on all three render paths.
+          Vivijure runs on your own accounts and you pay your own bills. On the Cloudflare host, the
+          standard install fits the Workers free plan; on vivijure-local you pay for the machine you
+          already run. Either way you pay only for what you use: RunPod GPU seconds, cloud render
+          API calls, and planner AI credits, or $0 if you render on your own GPU and use a local
+          planner.
         </p>
         <p class="cost-fine">
-          The one thing that needs Cloudflare's Workers Paid plan ($5/month) is the three GPU finish
-          satellites (sharper video, lip-sync); everything in the standard install runs free.
+          On the Cloudflare path, the three GPU finish satellites (sharper video, lip-sync) need the
+          Workers Paid plan ($5/month). The self-hosted control panel has no Workers bill.
         </p>
       </div>
 
       <div class="install-links">
-        <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-quickstart">
-          <span class="btn-label">Read the quickstart</span>
+        <a href="https://github.com/skyphusion-labs/vivijure" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">
+          <span class="btn-label">Constellation map</span>
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/DEPLOYMENT.md" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Full deployment reference</a>
+        <a href="https://github.com/skyphusion-labs/vivijure-cf" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">vivijure-cf</a>
+        <a href="https://github.com/skyphusion-labs/vivijure-local" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">vivijure-local</a>
       </div>
 
       <p class="install-soon">
-        Nearing general public release. A guided installer that stands the whole studio up for a
-        semi-novice user is on the way; today, the one-script <code>./deploy.sh</code> is the front
-        door.
+        Nearing general public release. Today the front doors are
+        <code>vivijure-cf</code> and <code>vivijure-local</code>; the constellation map at
+        <code>skyphusion-labs/vivijure</code> links every other piece.
       </p>
     </section>
 
@@ -796,9 +872,9 @@ cp deploy.env.example deploy.env   # edit deploy.env with your keys
           bright line is the project-wide spine and is not negotiable.
         </p>
         <p class="use-links">
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/ACCEPTABLE-USE.md" target="_blank" rel="noopener noreferrer">Acceptable Use Policy</a>
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of Service</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-cf/blob/main/docs/legal/ACCEPTABLE-USE.md" target="_blank" rel="noopener noreferrer">Acceptable Use Policy</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-cf/blob/main/docs/legal/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-cf/blob/main/docs/legal/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of Service</a>
         </p>
       </div>
     </section>
@@ -810,19 +886,20 @@ cp deploy.env.example deploy.env   # edit deploy.env with your keys
         <img src="/logo-icon.svg" alt="" width="36" height="36" aria-hidden="true" />
         <div>
           <strong>Vivijure</strong>
-          <p>The self-hosted AI film studio you actually own. Free, AGPL-3.0, built in the open by Skyphusion Labs.</p>
+          <p>The self-hosted AI film studio you actually own. Run the control panel on Cloudflare, a home PC, or any cloud server. Free, AGPL-3.0, built in the open by Skyphusion Labs.</p>
         </div>
       </div>
 
       <nav class="footer-links" aria-label="Footer">
         <div class="footer-col">
           <h3>Vivijure</h3>
-          <a href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">Source on GitHub</a>
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/quickstart.md" target="_blank" rel="noopener noreferrer">Quickstart</a>
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/DEPLOYMENT.md" target="_blank" rel="noopener noreferrer">Deployment docs</a>
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/ACCEPTABLE-USE.md" target="_blank" rel="noopener noreferrer">Acceptable use</a>
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of service</a>
-          <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/legal/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy policy</a>
+          <a href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">Constellation map</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-cf" target="_blank" rel="noopener noreferrer">Cloudflare host (vivijure-cf)</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-local" target="_blank" rel="noopener noreferrer">Self-hosted host (vivijure-local)</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer">Studio MCP</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-cf/blob/main/docs/legal/ACCEPTABLE-USE.md" target="_blank" rel="noopener noreferrer">Acceptable use</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-cf/blob/main/docs/legal/TERMS.md" target="_blank" rel="noopener noreferrer">Terms of service</a>
+          <a href="https://github.com/skyphusion-labs/vivijure-cf/blob/main/docs/legal/PRIVACY.md" target="_blank" rel="noopener noreferrer">Privacy policy</a>
         </div>
 
         <div class="footer-col">
