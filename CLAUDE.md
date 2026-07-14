@@ -8,8 +8,8 @@ Guidance for Claude Code (and the crew) working in this repo.
 AGPL-3.0 AI film studio. A single thin Cloudflare Worker that serves a static site from `public/`
 over Workers Assets; the Worker code only adds a `/health` endpoint and a `www` -> apex redirect.
 **No build step, no framework** -- vanilla HTML/CSS/JS by design. This is a MARKETING /
-EDUCATIONAL site, NOT the app: the studio (planner / cast / render) lives at
-`vivijure.skyphusion.org`, and the code lives at `github.com/skyphusion-labs/vivijure`. Keep this
+EDUCATIONAL site, NOT the app: the live demo lives at `demo.vivijure.com`, and the code lives at
+`github.com/skyphusion-labs/vivijure`. Keep this
 lean.
 
 ## Commands

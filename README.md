@@ -5,7 +5,8 @@ The product site for **Vivijure**, the self-hosted, AGPL-3.0 AI film studio by
 site from `public/` over Workers Assets. No build step, no framework, vanilla HTML/CSS/JS by
 design.
 
-This repo is the front door that explains the product. The constellation map lives at
+This repo is the front door that explains the product. The live demo is at
+[demo.vivijure.com](https://demo.vivijure.com). The constellation map lives at
 [github.com/skyphusion-labs/vivijure](https://github.com/skyphusion-labs/vivijure). Deploy the
 control panel with [vivijure-cf](https://github.com/skyphusion-labs/vivijure-cf) (Cloudflare) or
 [vivijure-local](https://github.com/skyphusion-labs/vivijure-local) (home PC or any cloud server).

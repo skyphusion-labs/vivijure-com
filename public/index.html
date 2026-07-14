@@ -85,12 +85,13 @@
         "image": "https://vivijure.com/og-image.png",
         "downloadUrl": "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
         "codeRepository": "https://github.com/skyphusion-labs/vivijure",
-        "softwareHelp": "https://github.com/skyphusion-labs/vivijure/blob/main/README.md",
+        "softwareHelp": "https://demo.vivijure.com",
         "author": { "@id": "https://skyphusion.org/#founder" },
         "publisher": { "@id": "https://skyphusion.org/#organization" },
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "license": "https://www.gnu.org/licenses/agpl-3.0.html",
         "sameAs": [
+          "https://demo.vivijure.com",
           "https://github.com/skyphusion-labs/vivijure",
           "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
           "https://github.com/skyphusion-labs/vivijure-cf",
@@ -209,7 +210,8 @@
       <a href="#ecosystem" class="nav-link">Constellation</a>
       <a href="#ask" class="nav-link">Ask</a>
       <a href="#install" class="nav-link">Install</a>
-      <a href="https://github.com/skyphusion-labs/vivijure" class="nav-link nav-link--accent" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">GitHub</a>
+      <a href="https://demo.vivijure.com" class="nav-link nav-link--accent" target="_blank" rel="noopener noreferrer" data-umami-event="demo-out">Demo</a>
+      <a href="https://github.com/skyphusion-labs/vivijure" class="nav-link" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">GitHub</a>
     </nav>
 
     <div class="hero-core">
@@ -224,10 +226,11 @@
         AGPL-3.0, and not for sale.
       </p>
       <div class="hero-actions">
-        <a href="#install" class="btn btn--primary">
-          <span class="btn-label">Get started</span>
+        <a href="https://demo.vivijure.com" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-umami-event="demo-out">
+          <span class="btn-label">Try the demo</span>
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
+        <a href="#install" class="btn btn--ghost">Self-host it</a>
         <a href="#showcase" class="btn btn--ghost">Watch the showcase</a>
         <a href="https://github.com/skyphusion-labs/vivijure" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure">Source on GitHub</a>
       </div>
@@ -695,9 +698,11 @@
         <p class="section-eyebrow">Get started</p>
         <h2 id="install-title">Stand up your own studio</h2>
         <p class="section-intro">
-          Pick a control panel host, then attach the GPU engines you want. Cloudflare if you want an
-          edge deploy; vivijure-local if you want the panel on a home computer or any cloud server.
-          Same studio API either way.
+          Prefer to click around first?
+          <a href="https://demo.vivijure.com" target="_blank" rel="noopener noreferrer" data-umami-event="demo-out">Try the live demo</a>.
+          When you are ready to own it, pick a control panel host, then attach the GPU engines you
+          want. Cloudflare if you want an edge deploy; vivijure-local if you want the panel on a home
+          computer or any cloud server. Same studio API either way.
         </p>
       </div>
 
@@ -747,10 +752,11 @@ npm run compose:up
       </div>
 
       <div class="install-links">
-        <a href="https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-release">
-          <span class="btn-label">v1.0.0 on GitHub</span>
+        <a href="https://demo.vivijure.com" class="btn btn--primary" target="_blank" rel="noopener noreferrer" data-umami-event="demo-out">
+          <span class="btn-label">Try the demo</span>
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
+        <a href="https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-release">v1.0.0 on GitHub</a>
         <a href="https://github.com/skyphusion-labs/vivijure-cf" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">vivijure-cf</a>
         <a href="https://github.com/skyphusion-labs/vivijure-local" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">vivijure-local</a>
         <a href="https://github.com/skyphusion-labs/vivijure" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Constellation map</a>
@@ -900,6 +906,7 @@ npm run compose:up
       <nav class="footer-links" aria-label="Footer">
         <div class="footer-col">
           <h3>Vivijure</h3>
+          <a href="https://demo.vivijure.com" target="_blank" rel="noopener noreferrer" data-umami-event="demo-out">Live demo</a>
           <a href="https://github.com/skyphusion-labs/vivijure" target="_blank" rel="noopener noreferrer">Constellation map</a>
           <a href="https://github.com/skyphusion-labs/vivijure-cf" target="_blank" rel="noopener noreferrer">Cloudflare host (vivijure-cf)</a>
           <a href="https://github.com/skyphusion-labs/vivijure-local" target="_blank" rel="noopener noreferrer">Self-hosted host (vivijure-local)</a>
