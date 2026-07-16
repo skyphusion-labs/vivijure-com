@@ -1,9 +1,9 @@
 // vivijure.com -- the Vivijure product site worker.
 //
 // Deliberately tiny: serve the static marketing site from public/ via Workers
-// Assets. Keep it that way. The studio app (planner / cast / render) lives at
-// vivijure.skyphusion.org, and the source lives on GitHub; this repo is the
-// front door that explains and sells (for $0) the product.
+// Assets. Keep it that way. The live demo lives at demo.vivijure.com, and the
+// source lives on GitHub; this repo is the front door that explains and sells
+// (for $0) the product.
 
 export interface Env {
   ASSETS: Fetcher;
