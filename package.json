@@ -1,6 +1,6 @@
 {
   "name": "vivijure-com",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vivijure.com -- product site for Vivijure 1.0.0, the self-hosted AGPL AI film studio (Cloudflare or self-hosted control panel).",
   "license": "AGPL-3.0-only",
   "type": "module",
