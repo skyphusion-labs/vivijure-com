@@ -20,6 +20,12 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // K3: workers.dev and stray routes should not serve duplicate content.
+    if (url.hostname !== CANONICAL_HOST && !url.hostname.endsWith(`.${CANONICAL_HOST}`)) {
+      url.hostname = CANONICAL_HOST;
+      return Response.redirect(url.toString(), 301);
+    }
+
     if (url.pathname === "/health") {
       return new Response(JSON.stringify({ ok: true, service: "vivijure-com" }), {
         headers: { "content-type": "application/json; charset=utf-8" },
