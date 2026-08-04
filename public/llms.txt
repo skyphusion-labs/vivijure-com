@@ -1,0 +1,22 @@
+# vivijure.com
+
+> Vivijure: the free AGPL-3.0 self-hosted AI film studio. Stable 1.0.
+
+## Product
+- Site: https://vivijure.com
+- Demo: https://demo.vivijure.com
+- Constellation map: https://github.com/skyphusion-labs/vivijure
+- Control panel (Cloudflare): https://github.com/skyphusion-labs/vivijure-cf
+- Control panel (Docker / home / cloud): https://github.com/skyphusion-labs/vivijure-local
+- Shared core: https://github.com/skyphusion-labs/vivijure-core
+- Agent MCP: https://github.com/skyphusion-labs/vivijure-mcp
+- GPU backend (RunPod): https://github.com/skyphusion-labs/vivijure-backend
+
+## Write-ups
+- Runs anywhere: https://skyphusion.net/blog/vivijure-run-anywhere/
+- Constellation: https://skyphusion.net/blog/vivijure-constellation/
+- Talking character: https://skyphusion.net/blog/vivijure-talking-character/
+
+## Labs
+- Skyphusion Labs: https://skyphusion.org
+- Engineering blog: https://skyphusion.net
