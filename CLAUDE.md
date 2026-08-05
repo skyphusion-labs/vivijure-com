@@ -8,9 +8,11 @@ Guidance for Claude Code (and the crew) working in this repo.
 AGPL-3.0 AI film studio. A single thin Cloudflare Worker that serves a static site from `public/`
 over Workers Assets; the Worker code only adds a `/health` endpoint and a `www` -> apex redirect.
 **No build step, no framework** -- vanilla HTML/CSS/JS by design. This is a MARKETING /
-EDUCATIONAL site, NOT the app: the live demo lives at `demo.vivijure.com`, and the code lives at
-`github.com/skyphusion-labs/vivijure`. Keep this
+EDUCATIONAL site, **NOT the app**. Live demo: `demo.vivijure.com`. Live studio panel code:
+`vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only. Keep this
 lean.
+
+Version: see root `package.json` / latest tag / `CHANGELOG.md`.
 
 ## Commands
 
@@ -30,10 +32,10 @@ canonical-host redirect).
 `npm run typecheck` is the gate (`tsc` is not part of any vitest run, so type errors pass silently).
 Behavior is covered by `index.test.ts` (Vitest): the root serves 200, `www` 301-redirects to the
 apex preserving the path, and `/health` returns `{ok: true, service: "vivijure-com"}` as JSON
-without touching the `ASSETS` binding. CI runs typecheck + deploy on `main` (`ci.yml`), a standalone
-typecheck (`typecheck.yml`), and a Vitest coverage run (`code-coverage.yml`), all on GitHub-hosted
-`ubuntu-latest` (this is a PUBLIC repo; per house CI policy it runs the fork-safe hosted path, not
-the self-hosted fleet).
+without touching the `ASSETS` binding. CI runs typecheck + **deploy on `main`** (`ci.yml`; this site
+is merge-deploy, not tag-gated like the studio panel), a standalone typecheck (`typecheck.yml`), and
+a Vitest coverage run (`code-coverage.yml`), all on GitHub-hosted `ubuntu-latest` (PUBLIC repo;
+fork-safe hosted path, not the self-hosted fleet). Verify the live site after deploy, not only CI.
 
 ## Architecture
 
@@ -60,12 +62,13 @@ the self-hosted fleet).
   not generate `worker-configuration.d.ts`.
 - **`account_id` is never hardcoded** -- injected from `CLOUDFLARE_ACCOUNT_ID`.
 - **Copy accuracy:** the site describes a **stable Studio 1.0 product** on an open host/module
-  train. Keep claims honest and in sync with the constellation repos (`vivijure-cf`,
-  `vivijure-local`, `vivijure-mcp`, GPU doors, finish satellites, slate). Product line stays "1.0";
-  host versions (cf 1.x, local 1.x) are not the marketing version. When the product changes, update
-  the copy. Do not call CogVideoX 16GB experimental. Wan cast LoRA train
-  (`vivijure-wan-train`) is working for the cloud i2v path; say so. Homelab does not wire
-  `RUNPOD_WAN_TRAIN_ENDPOINT_ID` by default (CF / RunPod path).
+  train. Keep claims honest and in sync with the constellation (`vivijure-cf`, `vivijure-local`,
+  `vivijure-mcp`, `vivijure-control-plane`, GPU doors, finish satellites, `vivijure-wan-train`, slate).
+  Product line stays "1.0"; host package versions are not the marketing version. Do not call
+  CogVideoX 16GB experimental. Wan cast LoRA train is working for the cloud i2v path; say so.
+  Homelab does not wire `RUNPOD_WAN_TRAIN_ENDPOINT_ID` by default.
+- **CSAM bright-line** absolute in any policy/copy that touches AUP.
+- **Ignore Cursor `AGENTS.md`.** No em-dashes/en-dashes. Never freeze endpoint IDs or sprint boards.
 - **Licensing:** the site CODE is AGPL-3.0-only (`LICENSE`), same as Vivijure the product.
 
 ## Design system
@@ -85,4 +88,5 @@ labels, pill tags, IntersectionObserver reveal-on-scroll. Fonts are self-hosted 
 ## Commits & versioning
 
 Conventional Commits (`feat(scope):` / `fix(scope):` / `docs:` / `ci:`); the body explains the why.
-SemVer-style `0.MINOR.PATCH` while pre-1.0; bump `package.json` `version` in the release commit.
+SemVer on the package line in `package.json`; bump version in the release commit when cutting a site
+release.
