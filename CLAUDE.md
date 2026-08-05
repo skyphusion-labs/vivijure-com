@@ -8,9 +8,16 @@ Guidance for Claude Code (and the crew) working in this repo.
 AGPL-3.0 AI film studio. A single thin Cloudflare Worker that serves a static site from `public/`
 over Workers Assets; the Worker code only adds a `/health` endpoint and a `www` -> apex redirect.
 **No build step, no framework** -- vanilla HTML/CSS/JS by design. This is a MARKETING /
-EDUCATIONAL site, **NOT the app**. Live demo: `demo.vivijure.com`. Live studio panel code:
-`vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only. Keep this
-lean.
+EDUCATIONAL site, **NOT the app**. Live demo: `demo.vivijure.com`. Self-host / Labs panel code:
+`vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only.
+
+**Hosted tenant studios (control-plane product):** each hosted studio is a tenant Worker on
+**`<slug>.studio.vivijure.com`** (wildcard `*.studio.vivijure.com`). The multi-tenant front door
+(signup / account / admin) is **`studio.vivijure.com`** -- owned by `vivijure-control-plane`, not
+this marketing site. Do not conflate `vivijure.com` (this repo) with `*.studio.vivijure.com`
+(hosted product surface).
+
+Keep this lean.
 
 Version: see root `package.json` / latest tag / `CHANGELOG.md`.
 
