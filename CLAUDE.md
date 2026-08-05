@@ -59,9 +59,11 @@ the self-hosted fleet).
   just `ASSETS: Fetcher`). Runtime types come from the pinned `@cloudflare/workers-types` devDep; do
   not generate `worker-configuration.d.ts`.
 - **`account_id` is never hardcoded** -- injected from `CLOUDFLARE_ACCOUNT_ID`.
-- **Copy accuracy:** the site describes a real, near-release product. Keep claims honest and in sync
-  with the `vivijure` repo (motion backends, GPU doors, module contract, showcase films). When the
-  product changes, update the copy.
+- **Copy accuracy:** the site describes a **stable Studio 1.0 product** on an open host/module
+  train. Keep claims honest and in sync with the constellation repos (`vivijure-cf`,
+  `vivijure-local`, `vivijure-mcp`, GPU doors, finish satellites, slate). Product line stays "1.0";
+  host versions (cf 1.x, local 1.x) are not the marketing version. When the product changes, update
+  the copy. Do not call CogVideoX 16GB experimental. Do not over-promise custom Wan motion LoRAs.
 - **Licensing:** the site CODE is AGPL-3.0-only (`LICENSE`), same as Vivijure the product.
 
 ## Design system

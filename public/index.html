@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vivijure | The self-hosted AI film studio you actually own</title>
-  <meta name="description" content="Vivijure is the free, AGPL-3.0 AI film studio you run yourself (stable 1.0). Run the control panel on Cloudflare, on your home computer, or on any cloud server. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in. By Skyphusion Labs." />
+  <meta name="description" content="Vivijure is the free, AGPL-3.0 AI film studio you run yourself (Studio 1.0, open train). Control panel on Cloudflare or your own machine, dual-panel parity. Own-GPU LTX/CogVideoX doors, RunPod, cloud motion APIs, cast LoRAs, MuseTalk, agents via MCP, Slate in Discord. No subscription, no lock-in. By Skyphusion Labs." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Conrad Rockenhaus" />
   <meta name="theme-color" content="#070b14" />
@@ -29,7 +29,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vivijure" />
   <meta property="og:title" content="Vivijure | The self-hosted AI film studio you actually own" />
-  <meta property="og:description" content="Vivijure is the free AGPL-3.0 AI film studio (stable 1.0). Run the control panel on Cloudflare, your home PC, or any cloud server. No subscription, no lock-in." />
+  <meta property="og:description" content="Vivijure is the free AGPL-3.0 AI film studio (Studio 1.0). Cloudflare or self-host, same features. Own GPU, RunPod, cloud motion, MCP agents, Slate. No subscription, no lock-in." />
   <meta property="og:url" content="https://vivijure.com/" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:image" content="https://vivijure.com/og-image.png" />
@@ -44,7 +44,7 @@
   <meta name="twitter:site" content="@skyphusion" />
   <meta name="twitter:creator" content="@skyphusion" />
   <meta name="twitter:title" content="Vivijure | The self-hosted AI film studio you actually own" />
-  <meta name="twitter:description" content="Vivijure is free AGPL-3.0 self-hosted AI film studio (stable 1.0). Cloudflare, home PC, or any cloud server." />
+  <meta name="twitter:description" content="Vivijure: free AGPL-3.0 self-hosted AI film studio (Studio 1.0). Cloudflare or your machine, own GPU or cloud, MCP agents." />
   <meta name="twitter:image" content="https://vivijure.com/og-image.png" />
   <meta name="twitter:image:alt" content="Vivijure: make films with AI, on your own terms." />
   <script type="application/ld+json">
@@ -65,7 +65,7 @@
         "@id": "https://vivijure.com/#webpage",
         "url": "https://vivijure.com/",
         "name": "Vivijure | The self-hosted AI film studio you actually own",
-        "description": "Vivijure 1.0.0 is the free, AGPL-3.0 AI film studio you run yourself. Run the control panel on Cloudflare Workers, on a home computer, or on any cloud server. Write a storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API. No subscription, no account wall, no lock-in.",
+        "description": "Vivijure Studio 1.0 is the free, AGPL-3.0 AI film studio you run yourself. Control panel on Cloudflare Workers or on your own machine (dual-panel parity), storyboard to film on your own GPU, RunPod, or cloud motion APIs, plus agent MCP and Discord co-writing. No subscription, no account wall, no lock-in.",
         "isPartOf": { "@id": "https://vivijure.com/#website" },
         "about": { "@id": "https://vivijure.com/#vivijure" },
         "primaryImageOfPage": "https://vivijure.com/og-image.png",
@@ -79,9 +79,9 @@
         "applicationCategory": "MultimediaApplication",
         "applicationSubCategory": "AI film studio",
         "operatingSystem": "Cloudflare Workers, Linux, macOS, Windows, NVIDIA GPU",
-        "softwareVersion": "1.0.0",
+        "softwareVersion": "1.0",
         "releaseNotes": "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
-        "description": "Free, AGPL-3.0 open source AI film studio, now at 1.0.0. A thin control panel you can run on Cloudflare Workers (vivijure-cf), on a home computer, or on any cloud server (vivijure-local), both unified by vivijure-core, plus an agent MCP (vivijure-mcp) that works on either host. Opt-in GPU modules: storyboard, cast, LoRA training, SDXL keyframes, image-to-video across seven motion backends, finish and score chain, titles, credits, subtitles, and CPU assembly. Self-hosted, no subscription, no lock-in.",
+        "description": "Free, AGPL-3.0 open source AI film studio (Studio 1.0 open train). Thin control panel on Cloudflare Workers (vivijure-cf) or Node/Docker (vivijure-local), both on vivijure-core with dual-panel parity and agent MCP (vivijure-mcp). Cast LoRAs, SDXL keyframes, image-to-video (RunPod Wan, LTX 12GB, CogVideoX 16GB, six cloud motion APIs), finish chain (RIFE, MuseTalk, Real-ESRGAN, speech enhance), score/audio, titles, credits, subtitles. Discord co-writer (Slate). Self-hosted, no subscription, no lock-in.",
         "url": "https://vivijure.com/",
         "image": "https://vivijure.com/og-image.png",
         "downloadUrl": "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
@@ -206,6 +206,7 @@
 
   <header class="hero">
     <nav class="nav" aria-label="Primary">
+      <a href="#since" class="nav-link">Since 1.0</a>
       <a href="#showcase" class="nav-link">Showcase</a>
       <a href="#how" class="nav-link">How it works</a>
       <a href="#hosts" class="nav-link">Hosts</a>
@@ -219,13 +220,13 @@
 
     <div class="hero-core">
       <img src="/logo-icon.svg" alt="" class="hero-mark" aria-hidden="true" width="96" height="96" />
-      <p class="hero-eyebrow">skyphusion-labs / v1.0.0 public release</p>
+      <p class="hero-eyebrow">skyphusion-labs / Studio 1.0 open train</p>
       <h1>Make films with AI. <br /><em>On your own terms.</em></h1>
       <p class="hero-lede">
-        Vivijure 1.0.0 is out: a self-hosted AI film studio. Run the control panel on Cloudflare, on
-        your home computer, or on any cloud server; you are not restricted to one host. Write a
-        storyboard, render it to video on your own GPU, a rented cloud GPU, or a cloud motion API,
-        and own every artifact it produces. No subscription, no account wall, no lock-in. Free,
+        Vivijure is a self-hosted AI film studio. Run the control panel on Cloudflare or on your
+        own machine; both hosts ship the same studio features in the same release wave. Write a
+        storyboard (browser, Discord, or an agent MCP), render on your own GPU, RunPod, or a cloud
+        motion API, and own every artifact. No subscription, no account wall, no lock-in. Free,
         AGPL-3.0, and not for sale.
       </p>
       <div class="hero-actions">
@@ -242,7 +243,7 @@
     <dl class="hero-stats" aria-label="Vivijure at a glance">
       <div class="stat">
         <dt>Version</dt>
-        <dd>1.0.0</dd>
+        <dd>1.0</dd>
       </div>
       <div class="stat">
         <dt>License</dt>
@@ -276,6 +277,60 @@
       </figure>
     </section>
 
+    <!-- SINCE 1.0 -->
+    <section id="since" class="features" aria-labelledby="since-title">
+      <div class="section-head">
+        <p class="section-eyebrow">Since Studio 1.0</p>
+        <h2 id="since-title">What the open train added</h2>
+        <p class="section-intro">
+          Product line stays <strong>Studio 1.0</strong>. The control hosts and modules keep shipping
+          on an open release train (hosted and self-host in the same wave). Highlights from that train:
+        </p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--amber">Agents</span></div>
+          <h3>Drive the studio from MCP</h3>
+          <p>
+            <a href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer">vivijure-mcp</a>
+            talks to either host: projects, cast and LoRA train, storyboard, uploads, render library,
+            artifact view URLs, and contact-sheet frames for agent review. Same studio API the panel uses.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--cyan">Own GPU</span></div>
+          <h3>Two consumer doors</h3>
+          <p>
+            Speed on 12GB with
+            <a href="https://github.com/skyphusion-labs/vivijure-local-12gb" target="_blank" rel="noopener noreferrer">LTX-Video</a>;
+            fidelity on 16GB with
+            <a href="https://github.com/skyphusion-labs/vivijure-local-16gb" target="_blank" rel="noopener noreferrer">CogVideoX-5B</a>
+            (production-ready, measured on real silicon). Zero cloud GPU rent either way.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--violet">Parity</span></div>
+          <h3>Cloudflare and local, same wave</h3>
+          <p>
+            Dual-panel parity is a hard rule: studio features ship to
+            <a href="https://github.com/skyphusion-labs/vivijure-cf" target="_blank" rel="noopener noreferrer">vivijure-cf</a>
+            and
+            <a href="https://github.com/skyphusion-labs/vivijure-local" target="_blank" rel="noopener noreferrer">vivijure-local</a>
+            together. Pick the host for ops reasons, not for missing capabilities.
+          </p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--green">Writers' room</span></div>
+          <h3>Slate remembers the channel</h3>
+          <p>
+            <a href="https://github.com/skyphusion-labs/slate" target="_blank" rel="noopener noreferrer">Slate</a>
+            still co-writes in Discord and ships storyboards to your studio. Session memory and a
+            traffic ledger keep cast, brief, and recent studio work searchable mid-conversation.
+          </p>
+        </article>
+      </div>
+    </section>
+
     <!-- SHOWCASE -->
     <section id="showcase" class="showcase" aria-labelledby="showcase-title">
       <div class="section-head">
@@ -283,9 +338,9 @@
         <h2 id="showcase-title">Four films: silent, scored, narrated, and talking</h2>
         <p class="section-intro">
           Four real films rendered end to end on Vivijure, unedited renders straight off the
-          pipeline. Motion across an own-GPU Wan backend, Seedance cloud, and Kling cloud. The
-          newest, Vivijure Speaks, adds a character lip-synced to its own dialogue on a self-hosted
-          GPU. These are the proofs, not mockups.
+          pipeline. Motion across an own-GPU Wan backend, Seedance cloud, and Kling cloud.
+          <em>Vivijure Speaks</em> adds a character lip-synced to its own dialogue (MuseTalk) and
+          upscaled (Real-ESRGAN) on a self-hosted GPU. These are the proofs, not mockups.
         </p>
       </div>
 
@@ -412,28 +467,28 @@
           <span class="step-num" aria-hidden="true">02</span>
           <div>
             <strong>Cast your characters</strong>
-            <span>Upload portraits, generate a LoRA training set, and train a character LoRA on your GPU so the cast stays consistent across shots.</span>
+            <span>Upload portraits, generate a LoRA training set, and train an SDXL character LoRA on your GPU so the cast stays consistent across keyframes and shots.</span>
           </div>
         </li>
         <li class="step">
           <span class="step-num" aria-hidden="true">03</span>
           <div>
             <strong>Draw keyframes</strong>
-            <span>An SDXL keyframe per shot, so you preview the still before you commit to full motion.</span>
+            <span>An SDXL keyframe per shot, so you preview the still before you commit to full motion. Quality tiers (draft / standard / final) keep spend honest.</span>
           </div>
         </li>
         <li class="step">
           <span class="step-num" aria-hidden="true">04</span>
           <div>
             <strong>Animate each shot</strong>
-            <span>Wan 2.2 image-to-video on your own GPU, or any of six cloud motion backends. Mix and match per shot, any aspect ratio.</span>
+            <span>Wan 2.2 on RunPod, LTX on a 12GB card, CogVideoX on 16GB, or any of six cloud motion backends (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan 2.6). Mix and match per shot.</span>
           </div>
         </li>
         <li class="step">
           <span class="step-num" aria-hidden="true">05</span>
           <div>
             <strong>Finish and score (opt-in)</strong>
-            <span>Interpolate for smoother motion, lip-sync dialogue with MuseTalk, upscale with CUDA Real-ESRGAN, attach a music bed, or narrate with TTS.</span>
+            <span>Interpolate with RIFE, enhance dialogue speech, lip-sync with MuseTalk, upscale with CUDA Real-ESRGAN, attach a music bed, or narrate with TTS.</span>
           </div>
         </li>
         <li class="step">
@@ -464,7 +519,7 @@
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--cyan">Bring your own GPU</span></div>
           <h3>Render where you want</h3>
-          <p>Rent a datacenter GPU by the second on RunPod, run motion on the card in your own box, or call a cloud motion API per shot. Three honest doors to a GPU, your choice.</p>
+          <p>Rent a datacenter GPU by the second on RunPod, run motion on the card in your own box (LTX 12GB or CogVideoX 16GB), or call a cloud motion API per shot. Three honest doors to a GPU, your choice.</p>
         </article>
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--cyan">Bring your own keys</span></div>
@@ -479,12 +534,17 @@
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--violet">Consistent cast</span></div>
           <h3>Characters that hold up</h3>
-          <p>Register a cast, generate LoRA training sets from portraits, and train a character LoRA on your GPU so a character looks like itself from shot to shot.</p>
+          <p>Register a cast, generate LoRA training sets from portraits, and train an SDXL character LoRA on your GPU so a character looks like itself from shot to shot.</p>
+        </article>
+        <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--amber">Agents</span></div>
+          <h3>MCP, not only the browser</h3>
+          <p>Point Claude, Cursor, or any MCP client at either host. Plan projects, train cast LoRAs, save storyboards, upload assets, list renders, and pull artifact URLs without opening the UI.</p>
         </article>
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--violet">Score and voice</span></div>
           <h3>Sound, when you want it</h3>
-          <p>Assemble a silent picture by default, then attach a generated music bed, narrate with TTS, beat-sync the cuts, or give a character a voice with per-shot dialogue and lip-sync.</p>
+          <p>Assemble a silent picture by default, then attach a generated music bed, narrate with TTS, enhance thin speech, beat-sync the cuts, or give a character a voice with per-shot dialogue and lip-sync.</p>
         </article>
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--violet">Titles, credits, subtitles</span></div>
@@ -526,10 +586,11 @@
         <h2 id="hosts-title">Cloudflare, or your own machine. Same studio.</h2>
         <p class="section-intro">
           The Vivijure control panel is not locked to Cloudflare. Run it on Workers, on a home
-          computer, or on any cloud server. Both hosts share the same orchestration library
-          (<a href="https://github.com/skyphusion-labs/vivijure-core" target="_blank" rel="noopener noreferrer">vivijure-core</a>)
-          and the same agent API
-          (<a href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer">vivijure-mcp</a>).
+          computer, or on any cloud server. Both hosts share
+          <a href="https://github.com/skyphusion-labs/vivijure-core" target="_blank" rel="noopener noreferrer">vivijure-core</a>,
+          the same agent API
+          (<a href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer">vivijure-mcp</a>),
+          and dual-panel parity: studio features ship to both hosts in the same release wave.
         </p>
       </div>
 
@@ -537,19 +598,19 @@
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--violet">Cloudflare</span></div>
           <h3>vivijure-cf</h3>
-          <p>The control panel on Cloudflare Workers: D1, R2, service-bound modules, free-tier friendly. Standard path if you want an edge deploy with almost no ops.</p>
+          <p>The control panel on Cloudflare Workers: D1, R2, service-bound modules, free-tier friendly. Standard path if you want an edge deploy with almost no ops. Pairs with RunPod GPU engines and the finish satellites.</p>
           <p style="margin-top:0.75rem"><a href="https://github.com/skyphusion-labs/vivijure-cf" target="_blank" rel="noopener noreferrer">github.com/skyphusion-labs/vivijure-cf</a></p>
         </article>
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--cyan">Self-hosted</span></div>
           <h3>vivijure-local</h3>
-          <p>The same control panel on Node, SQLite, and S3/MinIO. Run it on a home PC, a homelab box, or any cloud VM. No Cloudflare account required.</p>
+          <p>The same control panel on Node, SQLite, and S3/MinIO. Run it on a home PC, a homelab box, or any cloud VM. No Cloudflare account required. Default path for pure homelab (local planner + own-GPU door).</p>
           <p style="margin-top:0.75rem"><a href="https://github.com/skyphusion-labs/vivijure-local" target="_blank" rel="noopener noreferrer">github.com/skyphusion-labs/vivijure-local</a></p>
         </article>
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--amber">Shared + agents</span></div>
           <h3>vivijure-core + vivijure-mcp</h3>
-          <p><strong>vivijure-core</strong> is the shared orchestration both hosts build on. <strong>vivijure-mcp</strong> lets Claude, Cursor, and other MCP clients drive either host through the same studio API.</p>
+          <p><strong>vivijure-core</strong> is the shared orchestration both hosts build on (registry, film pipeline, Platform ICD). <strong>vivijure-mcp</strong> is the agent door: cast, storyboard, uploads, render library, and artifact URLs against either host.</p>
           <p style="margin-top:0.75rem"><a href="https://github.com/skyphusion-labs/vivijure-core" target="_blank" rel="noopener noreferrer">vivijure-core</a> · <a href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer">vivijure-mcp</a></p>
         </article>
       </div>
@@ -575,12 +636,12 @@
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--cyan">Own GPU</span></div>
           <h3>Your own card, zero cloud cost</h3>
-          <p>Run motion on the graphics card already in your homelab, reached over a Cloudflare tunnel. A proven 12GB floor (LTX-Video) or 16GB fidelity door (CogVideoX-5B). Your only cost is electricity.</p>
+          <p>Run motion on the graphics card already in your homelab, reached over a Cloudflare tunnel. Two production doors: <strong>LTX-Video on 12GB</strong> (speed) and <strong>CogVideoX-5B on 16GB</strong> (fidelity). Your only cost is electricity.</p>
         </article>
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--amber">Bring your own</span></div>
           <h3>Point at a box you run</h3>
-          <p>Already have a GPU server? Point the studio at it. Or call one of six cloud motion APIs per shot (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan 2.6). Mix and match freely.</p>
+          <p>Already have a GPU server? Point the studio at it. Or call one of six cloud motion APIs per shot (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan 2.6). Mix and match freely with own-GPU shots.</p>
         </article>
       </div>
     </section>
@@ -612,11 +673,12 @@
                      v
              vivijure-backend (GPU: keyframes --&gt; i2v --&gt; assemble)
                      |
-       +-------------+-----------------------------+
-       |             |               |             |
-       v             v               v             v
-  local-12/16gb   musetalk       upscale      audio-upscale
- (own-GPU doors) (lip-sync)   (video upscale) (speech enhance)</pre>
+   +--------+--------+--------+----------+
+   |        |        |        |          |
+   v        v        v        v          v
+ local-   musetalk  upscale  audio-    wan-train
+ 12/16gb  (lip)     (video)  upscale   (Wan cast LoRA,
+ (own GPU)                  (speech)   cloud i2v path)</pre>
 
       <div class="repo-table" role="table" aria-label="The constellation repositories">
         <div class="repo-row repo-row--head" role="row">
@@ -641,19 +703,27 @@
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-mcp" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-mcp">
           <span role="cell"><strong>vivijure-mcp</strong></span>
-          <span role="cell">MCP server so AI agents drive the studio API. Works with vivijure-cf and vivijure-local.</span>
+          <span role="cell">MCP server so AI agents drive the studio API (cast, storyboard, uploads, library, artifacts). Works with vivijure-cf and vivijure-local.</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-control-plane" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-control-plane">
+          <span role="cell"><strong>vivijure-control-plane</strong></span>
+          <span role="cell">Optional hosted-tier provisioner: accounts and one full studio per tenant from the published studio release. You never need this to self-host; same AGPL if you run a competing host.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-backend" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-backend">
           <span role="cell"><strong>vivijure-backend</strong></span>
-          <span role="cell">The GPU render backend (RunPod serverless): LoRA training, SDXL keyframes, Wan image-to-video, and ffmpeg assembly.</span>
+          <span role="cell">The GPU render backend (RunPod serverless): SDXL cast LoRA training, SDXL keyframes, Wan image-to-video, quality tiers, and ffmpeg assembly.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local-12gb" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-local-12gb</strong></span>
-          <span role="cell">Own-GPU render door for a single 12GB consumer card (LTX-Video), self-hosted with docker compose. No rent.</span>
+          <span role="cell">Own-GPU speed door: LTX-Video image-to-video on a 12GB consumer card, docker compose. No cloud rent.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local-16gb" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-local-16gb</strong></span>
-          <span role="cell">The fidelity door: CogVideoX-5B image-to-video on a proven 16GB consumer GPU, measured on real silicon.</span>
+          <span role="cell">Own-GPU fidelity door: CogVideoX-5B image-to-video on a proven 16GB consumer GPU (production-ready).</span>
+        </a>
+        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-wan-train" target="_blank" rel="noopener noreferrer">
+          <span role="cell"><strong>vivijure-wan-train</strong></span>
+          <span role="cell">Satellite: Wan 2.2 A14B character LoRA training for the cloud image-to-video path (paired with the RunPod render engine).</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-musetalk" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-musetalk</strong></span>
@@ -665,11 +735,11 @@
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-audio-upscale" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-audio-upscale</strong></span>
-          <span role="cell">Finish satellite: CUDA speech-audio enhancement (resemble-enhance) so thin generated voices come out natural.</span>
+          <span role="cell">Finish satellite: CUDA speech-audio enhancement (resemble-enhance) so thin generated voices come out natural before lip-sync.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/slate" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>slate</strong></span>
-          <span role="cell">Collaborative AI screenwriter for Discord. Co-author a film in-channel, then submit to vivijure-cf or vivijure-local through the JSON API.</span>
+          <span role="cell">Collaborative AI screenwriter for Discord with session memory. Co-author in-channel, then submit to vivijure-cf or vivijure-local.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-com" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-com</strong></span>
@@ -687,7 +757,9 @@
           You do not have to write alone in a form. Slate is a Discord bot that joins your channel as
           a co-writer: you talk through an idea, Slate quietly keeps a structured storyboard in the
           background, draws your characters, and when you say ship it, hands the whole bundle to your
-          Studio to render. Conversation in, finished film out.
+          Studio (Cloudflare or local) to render. Session memory and a traffic ledger mean it can
+          recall cast, brief, and recent studio work mid-conversation instead of re-asking the room.
+          Conversation in, finished film out.
         </p>
       </div>
       <div class="slate-actions">
@@ -710,14 +782,16 @@
       </div>
 
       <div class="release-note" role="note">
-        <h3>v1.0.0 is out</h3>
+        <h3>Studio 1.0, open train</h3>
         <p>
-          Vivijure Studio leaves pre-1.0. The control panel, module registry, self-assembling UI,
-          and the full render spine (planner through master) are output-verified end to end on
-          production: motion backends, keyframes, finish, score/audio, captions, and cast. Grab the
+          The product line is stable at Studio 1.0. The control panel, module registry,
+          self-assembling UI, and the full render spine (planner through master) are
+          output-verified end to end: motion backends, keyframes, finish, score/audio, captions,
+          and cast. Hosts keep shipping on an open train with dual-panel parity (Cloudflare and
+          local in the same wave). Own-GPU doors: LTX-Video on 12GB (speed) and CogVideoX-5B on
+          16GB (fidelity), both production-ready. Grab the
           <a href="https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer">v1.0.0 release notes</a>
-          for the coverage ledger. The experimental CogVideoX 16GB local door is not in this train;
-          the mainstream own-GPU path ships via the LTX 12GB door.
+          for the original coverage ledger; host changelogs track what landed since.
         </p>
       </div>
 
@@ -759,16 +833,18 @@ npm run compose:up
           <span class="btn-label">Try the demo</span>
           <span class="btn-arrow" aria-hidden="true">&rarr;</span>
         </a>
-        <a href="https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-release">v1.0.0 on GitHub</a>
+        <a href="https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0" class="btn btn--ghost" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-release">Studio 1.0 on GitHub</a>
         <a href="https://github.com/skyphusion-labs/vivijure-cf" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">vivijure-cf</a>
         <a href="https://github.com/skyphusion-labs/vivijure-local" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">vivijure-local</a>
+        <a href="https://github.com/skyphusion-labs/vivijure-mcp" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">vivijure-mcp</a>
         <a href="https://github.com/skyphusion-labs/vivijure" class="btn btn--ghost" target="_blank" rel="noopener noreferrer">Constellation map</a>
       </div>
 
       <p class="install-soon">
-        Stable release train. The front doors are <code>vivijure-cf</code> (Cloudflare) and
-        <code>vivijure-local</code> (Docker on a home PC or any cloud server). The constellation map
-        at <code>skyphusion-labs/vivijure</code> links every other piece.
+        Open release train with dual-panel parity. The front doors are <code>vivijure-cf</code>
+        (Cloudflare) and <code>vivijure-local</code> (Docker on a home PC or any cloud server).
+        Agents use <code>vivijure-mcp</code>. The constellation map at
+        <code>skyphusion-labs/vivijure</code> links every other piece.
       </p>
     </section>
 
@@ -857,7 +933,7 @@ npm run compose:up
           <span class="manifesto-num" aria-hidden="true">04</span>
           <div>
             <strong>Collaborate with AI, do not just prompt it.</strong>
-            <span>Slate is a co-writer, not a text box. The crew are named individuals with commit access. The work is a genuine partnership, and it shows.</span>
+            <span>Slate is a co-writer, not a text box. Agents drive the studio through MCP. The crew are named individuals with commit access. The work is a genuine partnership, and it shows.</span>
           </div>
         </li>
         <li>
@@ -902,7 +978,7 @@ npm run compose:up
         <img src="/logo-icon.svg" alt="" width="36" height="36" aria-hidden="true" />
         <div>
           <strong>Vivijure</strong>
-          <p>Vivijure 1.0.0: the self-hosted AI film studio you actually own. Run the control panel on Cloudflare, a home PC, or any cloud server. Free, AGPL-3.0, built in the open by Skyphusion Labs.</p>
+          <p>Vivijure Studio 1.0: the self-hosted AI film studio you actually own. Cloudflare or your own machine, same features; own GPU, RunPod, or cloud motion; agents via MCP. Free, AGPL-3.0, built in the open by Skyphusion Labs.</p>
         </div>
       </div>
 

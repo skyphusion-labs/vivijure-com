@@ -8,6 +8,15 @@ behind each release. Newest first.
 
 - Nothing yet.
 
+## v1.1.0 -- 2026-08-04
+
+- **feat(site): product surface catch-up after Studio 1.0 open train.** Hero and install no longer
+  read as a one-shot 1.0.0 launch; "Since Studio 1.0" strip for MCP agents, dual own-GPU doors
+  (LTX 12GB + production CogVideoX 16GB), dual-panel parity, and Slate session memory. Features /
+  pipeline / hosts / constellation updated (control-plane, wan-train, MCP depth). Fixed the stale
+  "CogVideoX experimental / not in this train" install note. `llms.txt` and CLAUDE copy-accuracy
+  wording aligned.
+
 ## v1.0.1 -- 2026-07-22
 
 - **PATCH: `sharp` 0.35.3 override (#30), plus site updates** -- demo CTA, LinkedIn SEO metadata,
