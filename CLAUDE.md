@@ -63,7 +63,9 @@ the self-hosted fleet).
   train. Keep claims honest and in sync with the constellation repos (`vivijure-cf`,
   `vivijure-local`, `vivijure-mcp`, GPU doors, finish satellites, slate). Product line stays "1.0";
   host versions (cf 1.x, local 1.x) are not the marketing version. When the product changes, update
-  the copy. Do not call CogVideoX 16GB experimental. Do not over-promise custom Wan motion LoRAs.
+  the copy. Do not call CogVideoX 16GB experimental. Wan cast LoRA train
+  (`vivijure-wan-train`) is working for the cloud i2v path; say so. Homelab does not wire
+  `RUNPOD_WAN_TRAIN_ENDPOINT_ID` by default (CF / RunPod path).
 - **Licensing:** the site CODE is AGPL-3.0-only (`LICENSE`), same as Vivijure the product.
 
 ## Design system

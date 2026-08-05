@@ -8,6 +8,13 @@ behind each release. Newest first.
 
 - Nothing yet.
 
+## v1.1.1 -- 2026-08-04
+
+- **fix(site): Wan cast train is working.** Copy treated dual-expert Wan LoRAs as provisional;
+  Conrad confirmed `vivijure-wan-train` is live. Pipeline, cast feature, RunPod door, constellation
+  row, Since-1.0 strip, and `llms.txt` now state it as working (high/low noise keys applied at
+  cloud i2v). CLAUDE copy-accuracy updated.
+
 ## v1.1.0 -- 2026-08-04
 
 - **feat(site): product surface catch-up after Studio 1.0 open train.** Hero and install no longer
