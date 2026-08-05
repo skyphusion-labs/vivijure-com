@@ -81,7 +81,7 @@
         "operatingSystem": "Cloudflare Workers, Linux, macOS, Windows, NVIDIA GPU",
         "softwareVersion": "1.0",
         "releaseNotes": "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
-        "description": "Free, AGPL-3.0 open source AI film studio (Studio 1.0 open train). Thin control panel on Cloudflare Workers (vivijure-cf) or Node/Docker (vivijure-local), both on vivijure-core with dual-panel parity and agent MCP (vivijure-mcp). Cast LoRAs, SDXL keyframes, image-to-video (RunPod Wan, LTX 12GB, CogVideoX 16GB, six cloud motion APIs), finish chain (RIFE, MuseTalk, Real-ESRGAN, speech enhance), score/audio, titles, credits, subtitles. Discord co-writer (Slate). Self-hosted, no subscription, no lock-in.",
+        "description": "Free, AGPL-3.0 open source AI film studio (Studio 1.0 open train). Thin control panel on Cloudflare Workers (vivijure-cf) or Node/Docker (vivijure-local), both on vivijure-core with dual-panel parity and agent MCP (vivijure-mcp). Cast LoRAs (SDXL for keyframes; Wan 2.2 dual-expert for cloud motion via vivijure-wan-train), SDXL keyframes, image-to-video (RunPod Wan, LTX 12GB, CogVideoX 16GB, six cloud motion APIs), finish chain (RIFE, MuseTalk, Real-ESRGAN, speech enhance), score/audio, titles, credits, subtitles. Discord co-writer (Slate). Self-hosted, no subscription, no lock-in.",
         "url": "https://vivijure.com/",
         "image": "https://vivijure.com/og-image.png",
         "downloadUrl": "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
@@ -289,6 +289,16 @@
       </div>
       <div class="feature-grid">
         <article class="feature-card">
+          <div class="card-meta"><span class="pill pill--violet">Cast</span></div>
+          <h3>Wan character LoRAs, live</h3>
+          <p>
+            Train dual-expert Wan 2.2 cast adapters with
+            <a href="https://github.com/skyphusion-labs/vivijure-wan-train" target="_blank" rel="noopener noreferrer">vivijure-wan-train</a>
+            (high and low noise). The studio harvests the keys and the RunPod render path applies them
+            on cloud image-to-video, so faces stay consistent past the keyframe stage.
+          </p>
+        </article>
+        <article class="feature-card">
           <div class="card-meta"><span class="pill pill--amber">Agents</span></div>
           <h3>Drive the studio from MCP</h3>
           <p>
@@ -467,7 +477,7 @@
           <span class="step-num" aria-hidden="true">02</span>
           <div>
             <strong>Cast your characters</strong>
-            <span>Upload portraits, generate a LoRA training set, and train an SDXL character LoRA on your GPU so the cast stays consistent across keyframes and shots.</span>
+            <span>Upload portraits and train character LoRAs: SDXL for consistent keyframes, and Wan 2.2 dual-expert adapters (vivijure-wan-train) so the same face holds through cloud image-to-video.</span>
           </div>
         </li>
         <li class="step">
@@ -534,7 +544,7 @@
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--violet">Consistent cast</span></div>
           <h3>Characters that hold up</h3>
-          <p>Register a cast, generate LoRA training sets from portraits, and train an SDXL character LoRA on your GPU so a character looks like itself from shot to shot.</p>
+          <p>Register a cast and train character LoRAs from portraits: SDXL adapters for keyframes, plus working Wan 2.2 dual-expert LoRAs (high and low noise) for cloud motion so a face stays itself from still to clip.</p>
         </article>
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--amber">Agents</span></div>
@@ -631,7 +641,7 @@
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--violet">Cloud</span></div>
           <h3>Rent by the second</h3>
-          <p>Rent a datacenter GPU on RunPod serverless: Wan 2.2 image-to-video from our BF16 serverless image. We recommend an RTX PRO 6000 as the minimum, an H200 for the better tier, and a B200 as the most optimal; the BF16 image is not recommended on an H100. Scale to zero when idle, so you pay nothing between renders.</p>
+          <p>Rent a datacenter GPU on RunPod serverless: Wan 2.2 image-to-video from our BF16 serverless image, with cast LoRAs trained on the paired wan-train satellite and applied at i2v time. We recommend an RTX PRO 6000 as the minimum, an H200 for the better tier, and a B200 as the most optimal; the BF16 image is not recommended on an H100. Scale to zero when idle, so you pay nothing between renders.</p>
         </article>
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--cyan">Own GPU</span></div>
@@ -723,7 +733,7 @@
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-wan-train" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-wan-train</strong></span>
-          <span role="cell">Satellite: Wan 2.2 A14B character LoRA training for the cloud image-to-video path (paired with the RunPod render engine).</span>
+          <span role="cell">Working satellite: Wan 2.2 A14B dual-expert character LoRA training for cloud image-to-video. Studio trains, harvests high/low noise keys, and the render engine applies them at i2v time.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-musetalk" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-musetalk</strong></span>

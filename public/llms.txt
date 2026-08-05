@@ -2,7 +2,8 @@
 
 > Vivijure: free AGPL-3.0 self-hosted AI film studio. Studio 1.0 open train.
 > Dual-panel parity (Cloudflare or local), own-GPU LTX/CogVideoX doors, RunPod, cloud motion,
-> cast LoRAs, finish chain, agent MCP, Slate Discord co-writer.
+> cast LoRAs (SDXL keyframes + working Wan dual-expert train for cloud i2v), finish chain,
+> agent MCP, Slate Discord co-writer.
 
 ## Product
 - Site: https://vivijure.com
@@ -16,7 +17,7 @@
 - GPU backend (RunPod): https://github.com/skyphusion-labs/vivijure-backend
 - Own-GPU LTX 12GB: https://github.com/skyphusion-labs/vivijure-local-12gb
 - Own-GPU CogVideoX 16GB: https://github.com/skyphusion-labs/vivijure-local-16gb
-- Wan cast train (cloud i2v): https://github.com/skyphusion-labs/vivijure-wan-train
+- Wan cast train (working, cloud i2v dual-expert LoRAs): https://github.com/skyphusion-labs/vivijure-wan-train
 - MuseTalk / upscale / audio-upscale finish satellites
 - Discord co-writer: https://github.com/skyphusion-labs/slate
 
