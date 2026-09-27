@@ -39,6 +39,22 @@ answer `/health`, and 301-redirect `www` to the apex.
 - **Showcase media is external.** The showcase films and the pipeline diagram are served from
   `assets.skyphusion.net`, so this repo stays small and text-only.
 
+## Ask widget
+
+`public/ask-widget.js` is a byte-for-byte copy of the canonical widget in
+[`@skyphusion/search-mcp`](https://github.com/skyphusion-labs/search-mcp) (`public/ask-widget.js`).
+It is never edited here. Site text is configured on the `<script>` tag in `public/index.html`
+(`data-label`, `data-placeholder`, `data-endpoint`, `data-target`, `data-sitekey`). The version the
+copy tracks is declared in `scripts/ask-widget.canonical.json`, and the `ask-widget-drift` CI job
+runs `node scripts/check-ask-widget.mjs`, which fetches that exact version from the npm registry
+and fails if the copy differs by one byte (or if the declared version does not exist). No shared
+build step; the check is what makes the copy trustworthy. `ask-widget.css` is site theming and is
+not checked.
+
+To bump: set `version` in `scripts/ask-widget.canonical.json`, run
+`node scripts/check-ask-widget.mjs --fetch > public/ask-widget.js`, then run the tests and commit
+both files together. Fix widget bugs upstream in search-mcp, release, then bump here.
+
 ## SEO
 
 - **Structured data (JSON-LD):** `WebSite`, `WebPage`, `SoftwareApplication`, `Organization` and

@@ -12,10 +12,11 @@ type El = Record<string, any>;
 function makeDom() {
   const els: Record<string, El> = {
     '.vjask-form': { listeners: {} as Record<string, (ev: unknown) => void>, addEventListener(t: string, f: (ev: unknown) => void) { this.listeners[t] = f; } },
-    '.vjask-input': { value: 'how do I render?' },
+    '.vjask-input': { value: 'how do I render?', setAttribute() {} },
+    '.vjask-label': { textContent: '' },
     '.vjask-btn': { disabled: false },
     '.vjask-answer': { textContent: '' },
-    '.vjask-sources': { hidden: true, innerHTML: '' },
+    '.vjask-sources': { hidden: true, textContent: '', children: [] as El[], appendChild(n: El) { this.children.push(n); } },
   };
   const root = { classList: { add() {} }, innerHTML: '', querySelector: (s: string) => els[s] ?? null };
   const doc = {
@@ -23,6 +24,9 @@ function makeDom() {
     currentScript: { getAttribute: () => null },
     querySelector: () => root,
     addEventListener() {},
+    // the canonical widget builds source citations with the DOM API, not innerHTML
+    createElement: () => ({ textContent: '', children: [] as El[], setAttribute() {}, appendChild(n: El) { this.children.push(n); } }),
+    createTextNode: (t: string) => ({ textContent: t, children: [] as El[] }),
   };
   return { els, doc };
 }
@@ -44,7 +48,8 @@ async function runWidget(chunks: string[]): Promise<{ answer: string; sources: s
   for (let n = 0; n < 200 && els['.vjask-btn'].disabled !== false; n++) await new Promise((r) => setTimeout(r, 5));
   // the submit handler sets disabled=true synchronously, so reaching false means finally ran
   expect(els['.vjask-btn'].disabled).toBe(false);
-  return { answer: els['.vjask-answer'].textContent, sources: els['.vjask-sources'].innerHTML };
+  const text = (n: El): string => (n.textContent ?? '') + (n.children ?? []).map(text).join('');
+  return { answer: els['.vjask-answer'].textContent, sources: text(els['.vjask-sources']) };
 }
 
 const delta = (t: string) => `data: ${JSON.stringify({ choices: [{ delta: { content: t } }] })}\n\n`;
