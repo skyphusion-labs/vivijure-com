@@ -40,8 +40,8 @@ canonical-host redirect).
 Behavior is covered by `index.test.ts` (Vitest): the root serves 200, `www` 301-redirects to the
 apex preserving the path, and `/health` returns `{ok: true, service: "vivijure-com"}` as JSON
 without touching the `ASSETS` binding. CI runs typecheck + **deploy on `main`** (`ci.yml`; this site
-is merge-deploy, not tag-gated like the studio panel), a standalone typecheck (`typecheck.yml`), and
-a Vitest coverage run (`code-coverage.yml`), all on GitHub-hosted `ubuntu-latest` (PUBLIC repo;
+is merge-deploy, not tag-gated like the studio panel), a `coverage.yml` run, and `corpus-notify.yml`
+(search-mcp corpus refresh notice on push to `main`), all on GitHub-hosted `ubuntu-latest` (PUBLIC repo;
 fork-safe hosted path, not the self-hosted fleet). Verify the live site after deploy, not only CI.
 
 ## Architecture
