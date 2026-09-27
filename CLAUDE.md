@@ -39,7 +39,7 @@ canonical-host redirect).
 `npm run typecheck` is the gate (`tsc` is not part of any vitest run, so type errors pass silently).
 Behavior is covered by `index.test.ts` (Vitest): the root serves 200, `www` 301-redirects to the
 apex preserving the path, and `/health` returns `{ok: true, service: "vivijure-com"}` as JSON
-without touching the `ASSETS` binding. CI runs typecheck + **deploy on `main`** (`ci.yml`; this site
+without touching the `ASSETS` binding. `public/ask-widget.js` is a pinned copy of `@skyphusion/search-mcp` (see the README "Ask widget" section; never hand-edit it, bump `scripts/ask-widget.canonical.json` instead). CI runs typecheck + **deploy on `main`** (`ci.yml`; this site
 is merge-deploy, not tag-gated like the studio panel), a `coverage.yml` run, and `corpus-notify.yml`
 (search-mcp corpus refresh notice on push to `main`), all on GitHub-hosted `ubuntu-latest` (PUBLIC repo;
 fork-safe hosted path, not the self-hosted fleet). Verify the live site after deploy, not only CI.
