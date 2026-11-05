@@ -6,7 +6,7 @@ behind each release. Newest first.
 
 ## Unreleased
 
-- Nothing yet.
+- **docs(site):** X handle moved from `@skyphusion` to `@rockrockenhaus` (2026-11-05); `x.com/skyphusion` no longer resolves. Every X link and `twitter:` meta tag now points at `x.com/rockrockenhaus`.
 
 ## v1.1.1 -- 2026-08-04
 
