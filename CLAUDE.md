@@ -6,7 +6,7 @@ Guidance for Claude Code (and the crew) working in this repo.
 
 **vivijure.com: the Vivijure product site.** The public front door for Vivijure, the self-hosted
 AGPL-3.0 AI film studio. A single thin Cloudflare Worker that serves a static site from `public/`
-over Workers Assets; the Worker code only adds a `/health` endpoint and a `www` -> apex redirect.
+over Workers Assets; the Worker code adds a `/health` endpoint, a `www` -> apex redirect, and a 301 of any host that is not `vivijure.com` and not a subdomain of it (workers.dev and other stray hosts) to the apex.
 **No build step, no framework** -- vanilla HTML/CSS/JS by design. This is a MARKETING /
 EDUCATIONAL site, **NOT the app**. Live demo: `demo.vivijure.com`. Self-host / Labs panel code:
 `vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only.
@@ -40,14 +40,15 @@ canonical-host redirect).
 Behavior is covered by `index.test.ts` (Vitest): the root serves 200, `www` 301-redirects to the
 apex preserving the path, and `/health` returns `{ok: true, service: "vivijure-com"}` as JSON
 without touching the `ASSETS` binding. `public/ask-widget.js` is a pinned copy of `@skyphusion/search-mcp` (see the README "Ask widget" section; never hand-edit it, bump `scripts/ask-widget.canonical.json` instead). CI runs typecheck + **deploy on `main`** (`ci.yml`; this site
-is merge-deploy, not tag-gated like the studio panel), a `coverage.yml` run, and `corpus-notify.yml`
+is merge-deploy, not tag-gated like the studio panel), a `coverage.yml` run (it echoes: `package.json` has no `test` or `coverage` script, so it does not run `index.test.ts`; run `npx vitest run` locally), and `corpus-notify.yml`
 (search-mcp corpus refresh notice on push to `main`), all on GitHub-hosted `ubuntu-latest` (PUBLIC repo;
 fork-safe hosted path, not the self-hosted fleet). Verify the live site after deploy, not only CI.
 
 ## Architecture
 
 - **The Worker is deliberately tiny.** `src/index.ts` exports a single `fetch` handler: 301-redirect
-  `www.vivijure.com` to the apex (preserving path), answer `/health` with JSON, otherwise hand off
+  `www.vivijure.com` to the apex (preserving path), 301 any other host that is not the apex and not
+  a `*.vivijure.com` name to the apex, answer `/health` with JSON, otherwise hand off
   to `env.ASSETS.fetch(request)`.
 - **Static assets, served by Workers Assets.** `wrangler.toml` binds `public/` as `ASSETS`. Content:
   `index.html`, `styles.css`, `fonts.css`, `main.js`, self-hosted `fonts/`, `logo-icon.svg`,
