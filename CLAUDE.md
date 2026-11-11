@@ -8,7 +8,7 @@ Guidance for Claude Code (and the crew) working in this repo.
 AGPL-3.0 AI film studio. A single thin Cloudflare Worker that serves a static site from `public/`
 over Workers Assets; the Worker code adds a `/health` endpoint, a `www` -> apex redirect, and a 301 of any host that is not `vivijure.com` and not a subdomain of it (workers.dev and other stray hosts) to the apex.
 **No build step, no framework** -- vanilla HTML/CSS/JS by design. This is a MARKETING /
-EDUCATIONAL site, **NOT the app**. Live demo: `demo.vivijure.com`. Self-host / Labs panel code:
+EDUCATIONAL site, **NOT the app**. Self-host / Labs panel code:
 `vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only.
 
 **Hosted tenant studios (control-plane product):** each hosted studio is a tenant Worker on
