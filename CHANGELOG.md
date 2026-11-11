@@ -6,6 +6,8 @@ behind each release. Newest first.
 
 ## Unreleased
 
+- **docs(site): Wan cast training is self-host only.** Conrad, 2026-11-11: the Wan 2.2 dual-expert training line stays, and every place that names it now says you must self-host `vivijure-wan-train` to use it; it is not part of any hosted offer. Changed: the JSON-LD description, the "Wan character LoRAs" card (its heading said "live" and now says "self-hosted"), the cast step, the consistent-cast card, the RunPod door card, the repo row, and both `llms.txt` lines.
+
 - **feat(site): vivijure.dev is the home; vivijure.org redirects to it.** The domain split Conrad
   set on 2026-11-11. `vivijure.dev` serves the site, and `www.vivijure.dev`, `vivijure.org` and
   `www.vivijure.org` 301 to `https://vivijure.dev`, keeping the path and query. All four are new
