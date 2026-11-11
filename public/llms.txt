@@ -12,12 +12,12 @@
 - Control panel (Docker / home / cloud): https://github.com/skyphusion-labs/vivijure-local
 - Shared core: https://github.com/skyphusion-labs/vivijure-core
 - Agent MCP: https://github.com/skyphusion-labs/vivijure-mcp
-- Optional hosted provisioner: https://github.com/skyphusion-labs/vivijure-control-plane
+- Reference multi-tenant control plane (maintained, not operated by Skyphusion): https://github.com/skyphusion-labs/vivijure-control-plane
 - GPU backend (RunPod): https://github.com/skyphusion-labs/vivijure-backend
 - Own-GPU LTX 12GB: https://github.com/skyphusion-labs/vivijure-local-12gb
 - Own-GPU CogVideoX 16GB: https://github.com/skyphusion-labs/vivijure-local-16gb
-- Wan cast train (cloud i2v dual-expert LoRAs; self-host only, not part of any hosted offer): https://github.com/skyphusion-labs/vivijure-wan-train
-- MuseTalk / upscale / audio-upscale finish satellites
+- Wan cast train (archived; self-host only, not part of any hosted offer): https://github.com/skyphusion-labs/vivijure-wan-train
+- Upscale finish satellite: https://github.com/skyphusion-labs/vivijure-upscale
 - Discord co-writer: https://github.com/skyphusion-labs/slate
 
 ## Write-ups

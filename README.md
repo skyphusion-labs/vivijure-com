@@ -26,8 +26,7 @@ answer `/health`, and 301-redirect the other hosts (see Architecture).
 ## Architecture
 
 - **The Worker is deliberately tiny.** `src/index.ts` exports a single `fetch` handler: it
-  serves the site on `vivijure.dev` (the home) and `vivijure.com` (the same site for now; it
-  becomes the hosted door later). It 301-redirects `www.vivijure.dev`, `vivijure.org`,
+  serves the site on `vivijure.dev` (the home) and `vivijure.com` (the same site for now). It 301-redirects `www.vivijure.dev`, `vivijure.org`,
   `www.vivijure.org` and any stray host (workers.dev) to `https://vivijure.dev`, keeping the path and
   query, and `www.vivijure.com` to `https://vivijure.com`. It answers `/health` with a JSON liveness
   object, and otherwise hands the request to `env.ASSETS.fetch(request)`. The static
