@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vivijure | The self-hosted AI film studio you actually own</title>
-  <meta name="description" content="Vivijure is the free, AGPL-3.0 AI film studio you run yourself (Studio 1.0, open train). Control panel on Cloudflare or your own machine, dual-panel parity. Own-GPU LTX/CogVideoX doors, RunPod, cloud motion APIs, cast LoRAs, MuseTalk, agents via MCP, Slate in Discord. No subscription, no lock-in. By Skyphusion Labs." />
+  <meta name="description" content="Vivijure is the free, AGPL-3.0 AI film studio you run yourself (Studio 1.0, open train). Control panel on Cloudflare or your own machine, dual-panel parity. Own-GPU LTX/CogVideoX doors, RunPod keyframes, cloud motion APIs, cast LoRAs, agents via MCP, Slate in Discord. No subscription, no lock-in. By Skyphusion Labs." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="Conrad Rockenhaus" />
   <meta name="theme-color" content="#070b14" />
@@ -81,7 +81,7 @@
         "operatingSystem": "Cloudflare Workers, Linux, macOS, Windows, NVIDIA GPU",
         "softwareVersion": "1.0",
         "releaseNotes": "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
-        "description": "Free, AGPL-3.0 open source AI film studio (Studio 1.0 open train). Thin control panel on Cloudflare Workers (vivijure-cf) or Node/Docker (vivijure-local), both on vivijure-core with dual-panel parity and agent MCP (vivijure-mcp). Cast LoRAs (SDXL for keyframes; Wan 2.2 dual-expert for cloud motion via vivijure-wan-train, self-host only), SDXL keyframes, image-to-video (RunPod Wan, LTX 12GB, CogVideoX 16GB, six cloud motion APIs), finish chain (RIFE, MuseTalk, Real-ESRGAN, speech enhance), score/audio, titles, credits, subtitles. Discord co-writer (Slate). Self-hosted, no subscription, no lock-in.",
+        "description": "Free, AGPL-3.0 open source AI film studio (Studio 1.0 open train). Thin control panel on Cloudflare Workers (vivijure-cf) or Node/Docker (vivijure-local), both on vivijure-core with dual-panel parity and agent MCP (vivijure-mcp). Cast LoRAs (SDXL for keyframes; Wan 2.2 dual-expert via the archived vivijure-wan-train, self-host only), SDXL keyframes, image-to-video (LTX 12GB, CogVideoX 16GB, thirteen cloud motion backends), finish chain (RIFE, Real-ESRGAN), score/audio, titles, credits, subtitles. Discord co-writer (Slate). Self-hosted, no subscription, no lock-in.",
         "url": "https://vivijure.dev/",
         "image": "https://vivijure.dev/og-image.png",
         "downloadUrl": "https://github.com/skyphusion-labs/vivijure/releases/tag/v1.0.0",
@@ -293,6 +293,7 @@
             (high and low noise). The studio harvests the keys and the RunPod render path applies them
             on cloud image-to-video, so faces stay consistent past the keyframe stage.
             Self-host only: you run it on your own RunPod account; it is not part of any hosted offer.
+            The vivijure-wan-train repo is archived.
           </p>
         </article>
         <article class="feature-card">
@@ -455,9 +456,9 @@
         <p class="section-eyebrow">How it works</p>
         <h2 id="how-title">From a storyboard to a finished film.mp4</h2>
         <p class="section-intro">
-          The keyframe fans into per-shot dialogue and the motion backend; any of seven motion
-          backends (own-GPU or cloud) renders the clip; the opt-in finish chain interpolates,
-          lip-syncs, and upscales it; then the shots gather, assemble, and mux. Motion is
+          The keyframe fans into per-shot dialogue and the motion backend; any of fifteen motion
+          backends (own-GPU or cloud) renders the clip, and a talking door can move the mouth from the
+          line; the opt-in finish chain interpolates and upscales it; then the shots gather and assemble. Motion is
           backend-agnostic, so you can mix own-GPU and cloud per shot.
         </p>
       </div>
@@ -488,14 +489,14 @@
           <span class="step-num" aria-hidden="true">04</span>
           <div>
             <strong>Animate each shot</strong>
-            <span>Wan 2.2 on RunPod, LTX on a 12GB card, CogVideoX on 16GB, or any of six cloud motion backends (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan 2.6). Mix and match per shot.</span>
+            <span>LTX on a 12GB card, CogVideoX on 16GB, or any of thirteen cloud motion backends (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan and more; the full list is in <a href="https://github.com/skyphusion-labs/vivijure/blob/main/docs/CAPABILITIES.md" target="_blank" rel="noopener noreferrer">What Vivijure can do today</a>). Mix and match per shot.</span>
           </div>
         </li>
         <li class="step">
           <span class="step-num" aria-hidden="true">05</span>
           <div>
             <strong>Finish and score (opt-in)</strong>
-            <span>Interpolate with RIFE, enhance dialogue speech, lip-sync with MuseTalk, upscale with CUDA Real-ESRGAN, attach a music bed, or narrate with TTS.</span>
+            <span>Interpolate with RIFE, upscale with CUDA Real-ESRGAN, attach a music bed, or narrate with TTS.</span>
           </div>
         </li>
         <li class="step">
@@ -551,7 +552,7 @@
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--violet">Score and voice</span></div>
           <h3>Sound, when you want it</h3>
-          <p>Assemble a silent picture by default, then attach a generated music bed, narrate with TTS, enhance thin speech, beat-sync the cuts, or give a character a voice with per-shot dialogue and lip-sync.</p>
+          <p>Assemble a silent picture by default, then attach a generated music bed, narrate with TTS, beat-sync the cuts, or give a character a voice with per-shot dialogue and lip-sync.</p>
         </article>
         <article class="feature-card">
           <div class="card-meta"><span class="pill pill--violet">Titles, credits, subtitles</span></div>
@@ -638,7 +639,7 @@
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--violet">Cloud</span></div>
           <h3>Rent by the second</h3>
-          <p>Rent a datacenter GPU on RunPod serverless: Wan 2.2 image-to-video from our BF16 serverless image, with cast LoRAs trained on the paired wan-train satellite, which you self-host, and applied at i2v time. We recommend an RTX PRO 6000 as the minimum, an H200 for the better tier, and a B200 as the most optimal; the BF16 image is not recommended on an H100. Scale to zero when idle, so you pay nothing between renders.</p>
+          <p>Rent a datacenter GPU on RunPod serverless: SDXL keyframes from the vivijure-backend image, and cloud image-to-video from RunPod-hosted models you pick per shot. Scale to zero when idle, so you pay nothing between renders.</p>
         </article>
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--cyan">Own GPU</span></div>
@@ -648,7 +649,7 @@
         <article class="door-card">
           <div class="card-meta"><span class="pill pill--amber">Bring your own</span></div>
           <h3>Point at a box you run</h3>
-          <p>Already have a GPU server? Point the studio at it. Or call one of six cloud motion APIs per shot (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan 2.6). Mix and match freely with own-GPU shots.</p>
+          <p>Already have a GPU server? Point the studio at it. Or call one of the cloud motion backends per shot (Kling, Seedance, MiniMax Hailuo, Google Veo, Vidu Q3, Wan and more). Mix and match freely with own-GPU shots.</p>
         </article>
       </div>
     </section>
@@ -678,14 +679,12 @@
                vivijure-core
                      |
                      v
-             vivijure-backend (GPU: keyframes --&gt; i2v --&gt; assemble)
-                     |
-   +--------+--------+--------+----------+
-   |        |        |        |          |
-   v        v        v        v          v
- local-   musetalk  upscale  audio-    wan-train
- 12/16gb  (lip)     (video)  upscale   (Wan cast LoRA,
- (own GPU)                  (speech)   cloud i2v path)</pre>
+   +------------------+------------------+-----------------+
+   |                  |                  |                 |
+   v                  v                  v                 v
+ vivijure-backend   cloud motion       local-12/16gb     upscale
+ (RunPod: SDXL      doors (via the     (own GPU i2v)     (video)
+  keyframes)        AI Gateway)</pre>
 
       <div class="repo-table" role="table" aria-label="The constellation repositories">
         <div class="repo-row repo-row--head" role="row">
@@ -718,7 +717,7 @@
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-backend" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-backend">
           <span role="cell"><strong>vivijure-backend</strong></span>
-          <span role="cell">The GPU render backend (RunPod serverless): SDXL cast LoRA training, SDXL keyframes, Wan image-to-video, quality tiers, and ffmpeg assembly.</span>
+          <span role="cell">The GPU keyframe backend (RunPod serverless): SDXL keyframes and SDXL cast LoRA training.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-local-12gb" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-local-12gb</strong></span>
@@ -730,19 +729,11 @@
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-wan-train" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-wan-train</strong></span>
-          <span role="cell">Working satellite: Wan 2.2 A14B dual-expert character LoRA training for cloud image-to-video. Studio trains, harvests high/low noise keys, and the render engine applies them at i2v time. Self-host only: you run it on your own RunPod account; it is not part of any hosted offer.</span>
-        </a>
-        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-musetalk" target="_blank" rel="noopener noreferrer">
-          <span role="cell"><strong>vivijure-musetalk</strong></span>
-          <span role="cell">Finish satellite: MuseTalk audio-driven lip-sync, so a character's mouth matches its dialogue.</span>
+          <span role="cell">Archived: Wan 2.2 A14B dual-expert character LoRA training. Self-host only; not part of any hosted offer.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-upscale" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>vivijure-upscale</strong></span>
           <span role="cell">Finish satellite: Real-ESRGAN CUDA video upscale (2x or 4x) for sharper, higher-resolution clips.</span>
-        </a>
-        <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-audio-upscale" target="_blank" rel="noopener noreferrer">
-          <span role="cell"><strong>vivijure-audio-upscale</strong></span>
-          <span role="cell">Finish satellite: CUDA speech-audio enhancement (resemble-enhance) so thin generated voices come out natural before lip-sync.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/slate" target="_blank" rel="noopener noreferrer">
           <span role="cell"><strong>slate</strong></span>
@@ -828,7 +819,7 @@ npm run compose:up
           planner.
         </p>
         <p class="cost-fine">
-          On the Cloudflare path, the three GPU finish satellites (sharper video, lip-sync) need the
+          On the Cloudflare path, the GPU finish satellite (sharper video, by upscale) needs the
           Workers Paid plan ($5/month). The self-hosted control panel has no Workers bill.
         </p>
       </div>
