@@ -1,4 +1,4 @@
-# vivijure.com
+# vivijure.dev
 
 > Vivijure: free AGPL-3.0 self-hosted AI film studio. Studio 1.0 open train.
 > Dual-panel parity (Cloudflare or local), own-GPU LTX/CogVideoX doors, RunPod, cloud motion,
@@ -6,7 +6,7 @@
 > agent MCP, Slate Discord co-writer.
 
 ## Product
-- Site: https://vivijure.com
+- Site: https://vivijure.dev
 - Constellation map: https://github.com/skyphusion-labs/vivijure
 - Control panel (Cloudflare): https://github.com/skyphusion-labs/vivijure-cf
 - Control panel (Docker / home / cloud): https://github.com/skyphusion-labs/vivijure-local

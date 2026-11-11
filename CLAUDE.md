@@ -4,9 +4,9 @@ Guidance for Claude Code (and the crew) working in this repo.
 
 ## What this is
 
-**vivijure.com: the Vivijure product site.** The public front door for Vivijure, the self-hosted
+**vivijure.dev: the Vivijure OSS site** (also served on vivijure.com). The public front door for Vivijure, the self-hosted
 AGPL-3.0 AI film studio. A single thin Cloudflare Worker that serves a static site from `public/`
-over Workers Assets; the Worker code adds a `/health` endpoint, a `www` -> apex redirect, and a 301 of any host that is not `vivijure.com` and not a subdomain of it (workers.dev and other stray hosts) to the apex.
+over Workers Assets; the Worker code adds a `/health` endpoint and routes by host: it serves `vivijure.dev` and `vivijure.com`, 301s `www.vivijure.com` to the .com apex, and 301s every other host (`www.vivijure.dev`, `vivijure.org`, `www.vivijure.org`, workers.dev, strays) to `https://vivijure.dev`, keeping the path and query.
 **No build step, no framework** -- vanilla HTML/CSS/JS by design. This is a MARKETING /
 EDUCATIONAL site, **NOT the app**. Self-host / Labs panel code:
 `vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only.
@@ -47,15 +47,15 @@ fork-safe hosted path, not the self-hosted fleet). Verify the live site after de
 ## Architecture
 
 - **The Worker is deliberately tiny.** `src/index.ts` exports a single `fetch` handler: 301-redirect
-  `www.vivijure.com` to the apex (preserving path), 301 any other host that is not the apex and not
-  a `*.vivijure.com` name to the apex, answer `/health` with JSON, otherwise hand off
+  `www.vivijure.com` to the .com apex, serve `vivijure.dev`, `vivijure.com` and `*.vivijure.com`,
+  301 every other host to `https://vivijure.dev` (path and query kept), answer `/health` with JSON, otherwise hand off
   to `env.ASSETS.fetch(request)`.
 - **Static assets, served by Workers Assets.** `wrangler.toml` binds `public/` as `ASSETS`. Content:
   `index.html`, `styles.css`, `fonts.css`, `main.js`, self-hosted `fonts/`, `logo-icon.svg`,
   `robots.txt`, `sitemap.xml`.
 - **Showcase media is external.** Showcase films and the pipeline diagram are served from
   `assets.skyphusion.net`; do not vendor large media into this repo.
-- **Both hostnames are Workers Custom Domains** (`vivijure.com` + `www.vivijure.com`). Routing
+- **Every hostname is a Workers Custom Domain** (`vivijure.dev`, `www.vivijure.dev`, `vivijure.org`, `www.vivijure.org`, `vivijure.com`, `www.vivijure.com`). Routing
   changes are infra work: coordinate with Strummer.
 
 ## Conventions
