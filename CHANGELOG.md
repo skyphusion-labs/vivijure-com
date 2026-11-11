@@ -6,6 +6,11 @@ behind each release. Newest first.
 
 ## Unreleased
 
+- **fix(site): remove links to demo.vivijure.com (#76).** The demo host was
+  retired and does not resolve. Nav, hero, install, footer, JSON-LD, `llms.txt`,
+  and the README no longer point at it. Nothing was repointed at the apex:
+  a link to this site is not a substitute for the retired demo.
+
 - **docs(site):** X handle moved from `@skyphusion` to `@rockrockenhaus` (2026-11-05); `x.com/skyphusion` no longer resolves. Every X link and `twitter:` meta tag now points at `x.com/rockrockenhaus`.
 
 ## v1.1.1 -- 2026-08-04
