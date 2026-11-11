@@ -511,7 +511,7 @@
       <figure class="diagram">
         <img src="https://assets.skyphusion.net/vivijure/diagrams/render-pipeline.svg"
              loading="lazy"
-             alt="The Vivijure render pipeline: a storyboard becomes keyframes, which fan into per-shot dialogue (TTS) and the motion backend (own-GPU Wan or a cloud image-to-video model); the clip runs an opt-in finish chain (RIFE interpolate, MuseTalk lip-sync, CUDA Real-ESRGAN upscale, text overlay); then the shots gather, assemble, and mux into the final film.mp4." />
+             alt="The Vivijure render pipeline: a storyboard becomes keyframes, which fan into per-shot dialogue (TTS) and the motion backend (your own GPU or a cloud image-to-video model); the clip runs an opt-in finish chain (RIFE interpolate, CUDA Real-ESRGAN upscale, text overlay); then the shots gather and assemble into the final film.mp4." />
         <figcaption>The render pipeline: keyframe to film, through the opt-in finish chain.</figcaption>
       </figure>
     </section>
@@ -713,7 +713,7 @@
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-control-plane" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-control-plane">
           <span role="cell"><strong>vivijure-control-plane</strong></span>
-          <span role="cell">Optional hosted-tier provisioner: accounts and one full studio per tenant from the published studio release. You never need this to self-host; same AGPL if you run a competing host.</span>
+          <span role="cell">A reference implementation of a multi-tenant control plane for hosting Vivijure Studio: accounts and one full studio per tenant from the published studio release. Maintained, not operated by Skyphusion. You never need it to self-host.</span>
         </a>
         <a class="repo-row" role="row" href="https://github.com/skyphusion-labs/vivijure-backend" target="_blank" rel="noopener noreferrer" data-umami-event="github-out" data-umami-event-repo="vivijure-backend">
           <span role="cell"><strong>vivijure-backend</strong></span>

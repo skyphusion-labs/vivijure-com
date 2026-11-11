@@ -12,9 +12,8 @@ EDUCATIONAL site, **NOT the app**. Self-host / Labs panel code:
 `vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only.
 
 **Hosted tenant studios (control-plane product):** each hosted studio is a tenant Worker on
-**`<slug>.studio.vivijure.com`** (wildcard `*.studio.vivijure.com`). The multi-tenant front door
-(signup / account / admin) was **`studio.vivijure.com`**, from `vivijure-control-plane`, not this
-marketing site; Skyphusion's own deployment of that plane is retired (cp#574). Do not conflate `vivijure.com` (this repo) with `*.studio.vivijure.com`
+**`<slug>.studio.vivijure.com`** (wildcard `*.studio.vivijure.com`). Signup and account pages are not
+this marketing site. (`vivijure-control-plane` is a reference implementation of a multi-tenant control plane for hosting Vivijure Studio; maintained, not operated by Skyphusion.) Do not conflate `vivijure.com` (this repo) with `*.studio.vivijure.com`
 (hosted product surface).
 
 Keep this lean.
