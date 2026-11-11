@@ -6,6 +6,8 @@ behind each release. Newest first.
 
 ## Unreleased
 
+- **fix(site): the social card says vivijure.dev.** `scripts/og-image.svg` and `public/og-image.png` now read `vivijure.dev` in the corner, matching the site's new home. Rendered with Conrad's full brand fonts through a browser with explicit `@font-face` (librsvg showed missing-glyph boxes in this seat). Control: the unchanged SVG, rendered the same way, matched the shipped card (0.58% of pixels beyond a 6% fuzz, all antialiasing; the same type, layout and color). The new render differs from that control only in a 38x16 box, the "com" to "dev" glyphs. Only a 200x45 region around the corner text was composited onto the shipped PNG, so every other pixel is unchanged. The seam is a uniform 1/255 step.
+
 - **docs(site): Wan cast training is self-host only.** Conrad, 2026-11-11: the Wan 2.2 dual-expert training line stays, and every place that names it now says you must self-host `vivijure-wan-train` to use it; it is not part of any hosted offer. Changed: the JSON-LD description, the "Wan character LoRAs" card (its heading said "live" and now says "self-hosted"), the cast step, the consistent-cast card, the RunPod door card, the repo row, and both `llms.txt` lines.
 
 - **feat(site): vivijure.dev is the home; vivijure.org redirects to it.** The domain split Conrad

@@ -91,6 +91,14 @@ fonts:
 rsvg-convert -w 1200 -h 630 scripts/og-image.svg -o public/og-image.png
 ```
 
+If that render shows boxed question marks instead of text, librsvg did not find the fonts. On macOS
+it can fail to see fonts added under `sudo` or without a login session, even when `fc-match` finds
+them. Render through a browser instead, with `@font-face` rules that point at the full brand `.ttf`
+files by the family names the SVG uses (`DM Sans 9pt`, `Instrument Serif`, `JetBrains Mono`), at
+1200x630 and device scale 1. Before trusting either path, render the UNCHANGED SVG first and diff
+it against the committed PNG. The 2026-11-11 corner-text change rendered that way, and only the
+changed text region was composited onto the shipped PNG.
+
 ## Conventions
 
 - **No em-dashes (U+2014) or en-dashes (U+2013) anywhere** (source, comments, docs, or site copy).
