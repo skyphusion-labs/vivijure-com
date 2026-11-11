@@ -1,4 +1,4 @@
-# vivijure.com -- the Vivijure product site. A thin Worker that serves static
+# vivijure.dev -- the Vivijure OSS site (also vivijure.org and vivijure.com). A thin Worker that serves static
 # assets (public/). No build step, no framework -- vanilla HTML/CSS/JS by design.
 #
 # account_id is read from CLOUDFLARE_ACCOUNT_ID (env / CI secret), not hardcoded.
@@ -19,10 +19,32 @@ assets = { directory = "./public", binding = "ASSETS", run_worker_first = true }
 enabled = true
 
 # --- Deploy / routing ---
-# Serve the apex vivijure.com from this worker via a Workers Custom Domain.
-# custom_domain provisions the proxied DNS + cert for the bare apex (a plain route
-# pattern would have no DNS to attach to). The worker itself 301-redirects the
-# www host to the apex.
+# Every host is a Workers Custom Domain: custom_domain provisions the proxied DNS + cert
+# (a plain route pattern would have no DNS to attach to). src/index.ts decides by host
+# (Conrad, 2026-11-11):
+#   vivijure.dev           the home, serves the site
+#   www.vivijure.dev       301 to https://vivijure.dev
+#   vivijure.org, www.     301 to https://vivijure.dev (path and query kept)
+#   vivijure.com           serves the same site for now (it becomes the hosted door later)
+#   www.vivijure.com       301 to https://vivijure.com
+# The .com subdomains (studio, app.studio, studio-mcp, search, search-internal,
+# runpod-proxy) belong to other Workers and are not routed here.
+[[routes]]
+pattern = "vivijure.dev"
+custom_domain = true
+
+[[routes]]
+pattern = "www.vivijure.dev"
+custom_domain = true
+
+[[routes]]
+pattern = "vivijure.org"
+custom_domain = true
+
+[[routes]]
+pattern = "www.vivijure.org"
+custom_domain = true
+
 [[routes]]
 pattern = "vivijure.com"
 custom_domain = true

@@ -3,12 +3,12 @@
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://vivijure.com/</loc>
-    <lastmod>2026-07-05</lastmod>
+    <loc>https://vivijure.dev/</loc>
+    <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://vivijure.com/og-image.png</image:loc>
+      <image:loc>https://vivijure.dev/og-image.png</image:loc>
       <image:title>Vivijure: make films with AI, on your own terms</image:title>
     </image:image>
     <video:video>

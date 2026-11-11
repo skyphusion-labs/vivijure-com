@@ -1,10 +1,18 @@
 # Changelog -- vivijure-com
 
-The product site (`vivijure.com`) deploys from `main`; a `v<X.Y.Z>` tag is the version of record and
+The site (`vivijure.dev`, also served on `vivijure.com`) deploys from `main`; a `v<X.Y.Z>` tag is the version of record and
 its GitHub Release is the bookkeeping pin rather than the deploy trigger. This file records the why
 behind each release. Newest first.
 
 ## Unreleased
+
+- **feat(site): vivijure.dev is the home; vivijure.org redirects to it.** The domain split Conrad
+  set on 2026-11-11. `vivijure.dev` serves the site, and `www.vivijure.dev`, `vivijure.org` and
+  `www.vivijure.org` 301 to `https://vivijure.dev`, keeping the path and query. All four are new
+  custom-domain routes. `vivijure.com` serves the same site for now, and `www.vivijure.com` still
+  301s to it. Stray hosts (workers.dev) now go to `https://vivijure.dev`. Canonical, og:url, the
+  JSON-LD ids, the sitemap, robots.txt, llms.txt and every self-link point at
+  `https://vivijure.dev`. `search.vivijure.com` is unchanged. The router tests cover every host.
 
 - **fix(site): remove links to demo.vivijure.com (#76).** The demo host was
   retired and does not resolve. Nav, hero, install, footer, JSON-LD, `llms.txt`,

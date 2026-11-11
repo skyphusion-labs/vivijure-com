@@ -5,4 +5,4 @@ User-agent: *
 Content-Signal: search=yes,ai-train=yes
 Allow: /
 
-Sitemap: https://vivijure.com/sitemap.xml
+Sitemap: https://vivijure.dev/sitemap.xml
