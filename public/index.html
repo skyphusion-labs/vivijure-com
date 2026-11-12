@@ -511,7 +511,7 @@
       <figure class="diagram">
         <img src="https://assets.skyphusion.net/vivijure/diagrams/render-pipeline.svg"
              loading="lazy"
-             alt="The Vivijure render pipeline: a storyboard becomes keyframes, which fan into per-shot dialogue (TTS) and the motion backend (your own GPU or a cloud image-to-video model); the clip runs an opt-in finish chain (RIFE interpolate, CUDA Real-ESRGAN upscale, text overlay); then the shots gather and assemble into the final film.mp4." />
+             alt="The Vivijure render pipeline: a storyboard becomes keyframes, which fan into per-character dialogue (TTS) and the motion backend (your own GPU with LTX or CogVideoX, or a cloud image-to-video model); each clip runs an opt-in finish chain (RIFE interpolate, CUDA Real-ESRGAN upscale); the shots gather and assemble with their audio, an opt-in score is muxed in, and the title card, credits and subtitles finish the film.mp4." />
         <figcaption>The render pipeline: keyframe to film, through the opt-in finish chain.</figcaption>
       </figure>
     </section>

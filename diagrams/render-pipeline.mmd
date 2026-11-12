@@ -1,0 +1,22 @@
+%% The Vivijure render pipeline, keyframe to film (vivijure-com#92).
+%% Source of https://assets.skyphusion.net/vivijure/diagrams/render-pipeline.svg
+%% Render: see diagrams/README.md. Each node is a render hook as vivijure-core
+%% resolves it (docs/CORE-VS-MODULES.md); the module names are the ones the
+%% page's pipeline steps name.
+flowchart LR
+  SB[Storyboard] --> KF[Keyframe<br/>SDXL]
+  KF --> DLG[Dialogue<br/>per-character TTS]
+  KF --> MB{{motion.backend}}
+  MB -- own GPU --> LOC[LTX on 12GB<br/>CogVideoX on 16GB]
+  MB -- cloud --> CLD[Kling / Seedance / Hailuo<br/>Veo / Vidu / Wan and more]
+  subgraph FIN[finish chain, opt-in]
+    RIFE[RIFE interpolate] --> UP[CUDA Real-ESRGAN upscale]
+  end
+  LOC --> RIFE
+  CLD --> RIFE
+  UP --> ASM[Gather + assemble<br/>keepClipAudio]
+  DLG --> ASM
+  SCORE[Score, opt-in<br/>music bed / TTS narration] --> MUX[Mux audio]
+  ASM --> MUX
+  MUX --> TTL[Title card, credits,<br/>subtitles]
+  TTL --> FILM[film.mp4]
