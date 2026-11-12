@@ -12,9 +12,8 @@ EDUCATIONAL site, **NOT the app**. Self-host / Labs panel code:
 `vivijure-cf` (and local panel `vivijure-local`). Hub `vivijure` is docs/legal history only.
 
 **Hosted tenant studios (control-plane product):** each hosted studio is a tenant Worker on
-**`<slug>.studio.vivijure.com`** (wildcard `*.studio.vivijure.com`). The multi-tenant front door
-(signup / account / admin) is **`studio.vivijure.com`** -- owned by `vivijure-control-plane`, not
-this marketing site. Do not conflate `vivijure.com` (this repo) with `*.studio.vivijure.com`
+**`<slug>.studio.vivijure.com`** (wildcard `*.studio.vivijure.com`). Signup and account pages are not
+this marketing site. (`vivijure-control-plane` is a reference implementation of a multi-tenant control plane for hosting Vivijure Studio; maintained, not operated by Skyphusion.) Do not conflate `vivijure.com` (this repo) with `*.studio.vivijure.com`
 (hosted product surface).
 
 Keep this lean.
@@ -40,9 +39,9 @@ canonical-host redirect).
 Behavior is covered by `index.test.ts` (Vitest): the root serves 200, `www` 301-redirects to the
 apex preserving the path, and `/health` returns `{ok: true, service: "vivijure-com"}` as JSON
 without touching the `ASSETS` binding. `public/ask-widget.js` is a pinned copy of `@skyphusion/search-mcp` (see the README "Ask widget" section; never hand-edit it, bump `scripts/ask-widget.canonical.json` instead). CI runs typecheck + **deploy on `main`** (`ci.yml`; this site
-is merge-deploy, not tag-gated like the studio panel), a `coverage.yml` run (it echoes: `package.json` has no `test` or `coverage` script, so it does not run `index.test.ts`; run `npx vitest run` locally), and `corpus-notify.yml`
+is merge-deploy, not tag-gated like the studio panel), a `coverage.yml` run (it runs `npm test`, which is `vitest run` over `index.test.ts`), and `corpus-notify.yml`
 (search-mcp corpus refresh notice on push to `main`), all on GitHub-hosted `ubuntu-latest` (PUBLIC repo;
-fork-safe hosted path, not the self-hosted fleet). Verify the live site after deploy, not only CI.
+fork-safe hosted path). Verify the live site after deploy, not only CI.
 
 ## Architecture
 
@@ -71,10 +70,11 @@ fork-safe hosted path, not the self-hosted fleet). Verify the live site after de
 - **`account_id` is never hardcoded** -- injected from `CLOUDFLARE_ACCOUNT_ID`.
 - **Copy accuracy:** the site describes a **stable Studio 1.0 product** on an open host/module
   train. Keep claims honest and in sync with the constellation (`vivijure-cf`, `vivijure-local`,
-  `vivijure-mcp`, `vivijure-control-plane`, GPU doors, finish satellites, `vivijure-wan-train`, slate).
+  `vivijure-mcp`, `vivijure-control-plane`, GPU doors, the upscale finish satellite, slate; `vivijure-wan-train` is archived).
   Product line stays "1.0"; host package versions are not the marketing version. Do not call
-  CogVideoX 16GB experimental. Wan cast LoRA train is working for the cloud i2v path; say so.
-  Homelab does not wire `RUNPOD_WAN_TRAIN_ENDPOINT_ID` by default.
+  CogVideoX 16GB experimental. Wan cast LoRA training is self-host only (the hosted endpoint is
+  retired and `vivijure-wan-train` is archived); say so. The project's operated RunPod endpoint makes
+  SDXL keyframes (plus upscale); motion comes from cloud doors or your own GPU.
 - **CSAM bright-line** absolute in any policy/copy that touches AUP.
 - **Ignore Cursor `AGENTS.md`.** No em-dashes/en-dashes. Never freeze endpoint IDs or sprint boards.
 - **Licensing:** the site CODE is AGPL-3.0-only (`LICENSE`), same as Vivijure the product.
@@ -98,3 +98,11 @@ labels, pill tags, IntersectionObserver reveal-on-scroll. Fonts are self-hosted 
 Conventional Commits (`feat(scope):` / `fix(scope):` / `docs:` / `ci:`); the body explains the why.
 SemVer on the package line in `package.json`; bump version in the release commit when cutting a site
 release.
+
+## Release convention (bump-at-release)
+
+One convention for every skyphusion-labs repo (Conrad, ruled 2026-11-10, fleet-chezmoi#1766). A version moves ONLY in a release PR: bump the version, then assemble the changelog. Feature and fix PRs do not bump. Releases go through a PR (fleet-chezmoi#1622) and the tag goes on that PR's merge commit.
+
+- Version of record here: package.json (and package-lock.json).
+- Tag shape: `v*`.
+- Check before a release PR: does a tag already exist for the version currently in the manifest? Yes means the cycle is closed, so the release PR bumps. No means a bump already landed outside a release PR; stop and read why before bumping again.
