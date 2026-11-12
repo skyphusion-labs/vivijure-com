@@ -40,8 +40,8 @@
     </video:video>
     <video:video>
       <video:thumbnail_loc>https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.jpg</video:thumbnail_loc>
-      <video:title>Vivijure Speaks, a talking-character Vivijure film (lip-sync + upscale)</video:title>
-      <video:description>A talking character lip-synced to its own dialogue and upscaled: per-shot dialogue TTS, then the MuseTalk lip-sync module and a CUDA Real-ESRGAN pass. Motion on a self-hosted GPU.</video:description>
+      <video:title>Vivijure Speaks, a talking-character Vivijure film made on 2026-06-21 with the now-retired lip-sync module</video:title>
+      <video:description>A dated example, made on 2026-06-21: a talking character lip-synced to its own dialogue and upscaled, with per-shot dialogue TTS, the MuseTalk lip-sync module and a CUDA Real-ESRGAN pass. Motion on a self-hosted GPU. The lip-sync module has since been retired, so Vivijure does not offer lip-sync today.</video:description>
       <video:content_loc>https://assets.skyphusion.net/vivijure/showcase/vivijure-speaks.mp4</video:content_loc>
       <video:publication_date>2026-06-21T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
