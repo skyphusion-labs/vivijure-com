@@ -40,9 +40,7 @@ Edit `public/` for content and design. Keep `src/index.ts` small. It serves asse
 
 `index.test.ts` checks three behaviors. The root returns 200. `www` returns 301 to the apex and keeps the path. `/health` returns `{ok: true, service: "vivijure-com"}` and does not touch `ASSETS`.
 
-`public/ask-widget.js` is a pinned copy of `@skyphusion/search-mcp`. Do not hand-edit it. Bump `scripts/ask-widget.canonical.json`. See the README section on the ask widget.
-
-CI runs typecheck, and it deploys on a merge to `main` (`.github/workflows/ci.yml`). This site is merge-deploy. It is not tag-gated like the studio panel. `coverage.yml` runs `npm test`. `corpus-notify.yml` notices a search corpus refresh on push to `main`. Runners are GitHub-hosted `ubuntu-latest`.
+CI runs typecheck, and it deploys on a merge to `main` (`.github/workflows/ci.yml`). This site is merge-deploy. It is not tag-gated like the studio panel. `coverage.yml` runs `npm test`. Runners are GitHub-hosted `ubuntu-latest`.
 
 Verify the live site after deploy. Do not stop at CI.
 
