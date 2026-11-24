@@ -59,7 +59,7 @@ answer `/health`, and 301-redirect the other hosts (see Architecture).
 - **Google:** the sitemap-ping API is retired; submit `https://vivijure.dev/sitemap.xml` once in
   Google Search Console (and add the verification meta tag if you want property verification). Bing
   Webmaster Tools imports from Search Console or accepts the sitemap directly.
-- **Analytics:** Self-hosted Umami at `analytics.skyphusion.org` (website id in `fleet-chezmoi/system/umami/websites.json`).
+- **Analytics:** Self-hosted Umami at `analytics.skyphusion.org` (website id is operator-managed).
 
 ## Regenerating the OG image
 
